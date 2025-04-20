@@ -1,0 +1,181 @@
+/* Additional CSS for Form Validation - Narayan Tripathi's Website */
+
+/* Required Field Indicator */
+.required {
+    color: #e74c3c;
+    margin-left: 3px;
+}
+
+/* Form Group Styles */
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.form-group.focused label {
+    color: #1a3263;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #1a3263;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 50, 99, 0.1);
+    background-color: #fff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Error Styles */
+.form-group input.error,
+.form-group textarea.error {
+    border-color: #e74c3c;
+    background-color: rgba(231, 76, 60, 0.05);
+}
+
+.form-group .error-message {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    min-height: 17px;
+    transition: all 0.3s ease;
+    display: none; /* Hide by default */
+}
+
+/* Form Status Messages */
+#form-status {
+    margin-bottom: 20px;
+    min-height: 24px;
+}
+
+.success-message, 
+.error-message, 
+.sending-message {
+    padding: 10px 15px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    margin-bottom: 15px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.success-message {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: #27ae60;
+    border-left: 3px solid #27ae60;
+}
+
+.error-message {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+    border-left: 3px solid #e74c3c;
+}
+
+.sending-message {
+    background-color: rgba(52, 152, 219, 0.1);
+    color: #3498db;
+    border-left: 3px solid #3498db;
+}
+
+.success-message i, 
+.error-message i, 
+.sending-message i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Submit Button Animation */
+.contact-form button {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.contact-form button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.6s ease;
+    z-index: -1;
+}
+
+.contact-form button:hover::before {
+    left: 100%;
+}
+
+/* Map Container Styles */
+.map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    margin: 20px 0 30px;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.map-container:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+    height: 300px;
+    border: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+    
+    .contact-info, 
+    .contact-form {
+        width: 100%;
+    }
+    
+    .map-container iframe {
+        height: 250px;
+    }
+}

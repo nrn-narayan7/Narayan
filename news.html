@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - Narayan Tripathi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="news-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="animations.css">
+    <script src="js/image-fallback.js"></script>
+     <!--  Favicon -->
+     <link href="img/blog-1.jpg" rel="icon">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/narayan_profile.png" alt="Narayan Tripathi">
+                </a>
+            </div>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="news.html" class="active">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="get-started">
+                <a href="contact.html" class="button">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown">Latest News & Articles</h1>
+        </div>
+    </section>
+
+    <section class="contents-section">
+        <div class="container">
+            <h2 class="section-heading animate__animated animate__fadeInUp">Stay Updated with the Latest Technological Developments</h2>
+            
+            <div class="search-container animate__animated animate__fadeInUp">
+                <div class="search-box">
+                    <input type="text" id="news-search" placeholder="Search for articles...">
+                    <button id="search-button"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="search-filters">
+                    <select id="topic-filter">
+                        <option value="all">All Topics</option>
+                        <option value="geomatics">Geomatics</option>
+                        <option value="ai">AI & Machine Learning</option>
+                        <option value="remote-sensing">Remote Sensing</option>
+                        <option value="gis">GIS</option>
+                        <option value="technology">Technology</option>
+                        <option value="drone">Drone Technology</option>
+                        <option value="lidar">LiDAR</option>
+                        <option value="photogrammetry">Photogrammetry</option>
+                        <option value="spatial-analysis">Spatial Analysis</option>
+                        <option value="cartography">Cartography</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <select id="date-filter">
+                        <option value="all">All Time</option>
+                        <option value="today">Today</option>
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                        <option value="year">This Year</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="news-refresh-bar">
+                <button id="refresh-news" class="refresh-button">
+                    <i class="fas fa-sync-alt"></i> Refresh Content
+                </button>
+                <div id="refresh-notification" class="refresh-notification">
+                    <i class="fas fa-info-circle"></i>
+                    <span id="notification-message">Refreshing content...</span>
+                </div>
+                <div class="last-updated">
+                    Last updated: <span id="last-updated-time">Just now</span>
+                </div>
+            </div>
+            
+            <div class="news-feed-container">
+                <div id="news-feed" class="news-feed">
+                    <!-- News articles will be dynamically loaded here -->
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-pulse"></i>
+                        <p>Loading latest news...</p>
+                    </div>
+                </div>
+                
+                <div class="news-info animate__animated animate__fadeInUp">
+                    <div class="news-update-info">
+                        <i class="fas fa-sync-alt"></i>
+                        <p>News articles automatically update daily with the latest information from trusted sources.</p>
+                    </div>
+                    
+                    <div class="news-sources">
+                        <h3>Featured Sources</h3>
+                        <ul>
+                            <li><a href="https://www.gislounge.com/" target="_blank">GIS Lounge</a></li>
+                            <li><a href="https://www.geospatialworld.net/" target="_blank">Geospatial World</a></li>
+                            <li><a href="https://www.directionsmag.com/" target="_blank">Directions Magazine</a></li>
+                            <li><a href="https://www.gim-international.com/" target="_blank">GIM International</a></li>
+                            <li><a href="https://www.xyht.com/" target="_blank">xyHt</a></li>
+                            <li><a href="https://kathmandupost.com/science-technology" target="_blank">Kathmandu Post Tech</a></li>
+                            <li><a href="https://techlekh.com/" target="_blank">TechLekh</a></li>
+                            <li><a href="https://techpana.com/" target="_blank">TechPana</a></li>
+                            <li><a href="https://www.gadgetbytenepal.com/" target="_blank">Gadget Byte Nepal</a></li>
+                            <li><a href="https://techcrunch.com/" target="_blank">TechCrunch</a></li>
+                            <li><a href="https://www.engadget.com/" target="_blank">Engadget</a></li>
+                            <li><a href="https://www.wired.com/" target="_blank">WIRED</a></li>
+                            <li><a href="https://www.theverge.com/" target="_blank">The Verge</a></li>
+                            <li><a href="https://www.esri.com/" target="_blank">ESRI</a></li>
+                            <li><a href="https://www.fig.net/" target="_blank">FIG</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-container animate__animated animate__fadeInUp">
+                <h2>Subscribe to My Newsletter</h2>
+                <p>Get the latest articles, news, and updates delivered directly to your inbox.</p>
+                
+                <form id="newsletterForm" class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" id="newsletter-email" placeholder="Your Email Address" required>
+                        <button type="submit" class="button">Subscribe</button>
+                    </div>
+                    <div id="newsletter-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 Narayan Prasad Tripathi. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/news-feed.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/article-viewer.js"></script>
+    <script src="js/news-backend.js"></script>
+    
+</body>
+</html>
