@@ -1,5 +1,41 @@
 // JavaScript for Narayan Tripathi's Website - Fixed Version
 
+
+document.addEventListener('scroll', function() {
+    const baseLayer = document.querySelector('.layer-base');
+    const mapLayer = document.querySelector('.layer-map');
+    const shapesLayer = document.querySelector('.layer-shapes');
+    const scrollPosition = window.scrollY;
+
+    // Parallax speeds for each layer (adjust multipliers)
+    baseLayer.style.transform = `translateY(${scrollPosition * 0.2}px)`;
+    mapLayer.style.transform = `translateY(${scrollPosition * 0.4}px)`;
+    shapesLayer.style.transform = `translateY(${scrollPosition * 0.6}px)`;
+});
+
+// Mouse-based tilt effect
+document.addEventListener('mousemove', function(e) {
+    const heroSection = document.querySelector('.hero-section');
+    const baseLayer = document.querySelector('.layer-base');
+    const mapLayer = document.querySelector('.layer-map');
+    const shapesLayer = document.querySelector('.layer-shapes');
+
+    // Get mouse position relative to window center
+    const rect = heroSection.getBoundingClientRect();
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const mouseX = e.clientX - rect.left - centerX;
+    const mouseY = e.clientY - rect.top - centerY;
+
+    // Calculate tilt (adjust divisors for sensitivity)
+    const tiltX = mouseY / centerY / 10; // Vertical tilt
+    const tiltY = -mouseX / centerX / 10; // Horizontal tilt
+
+    // Apply transforms with subtle movement
+    baseLayer.style.transform = `translateY(${window.scrollY * 0.2}px) rotateX(${tiltX * 2}deg) rotateY(${tiltY * 2}deg)`;
+    mapLayer.style.transform = `translateY(${window.scrollY * 0.4}px) rotateX(${tiltX * 4}deg) rotateY(${tiltY * 4}deg)`;
+    shapesLayer.style.transform = `translateY(${window.scrollY * 0.6}px) rotateX(${tiltX * 6}deg) rotateY(${tiltY * 6}deg)`;
+});
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize timeline items immediately without animation classes
     initializeTimeline();

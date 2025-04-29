@@ -1,6 +1,132 @@
 /* Enhanced CSS for Narayan Tripathi's Website - Final Version with Animations */
 
 /* Reset and Base Styles */
+
+/* Hero section setup */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Hero background container */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Base layer: Gradient background */
+.parallax-layer.layer-base {
+    position: absolute;
+    width: 100%;
+    height: 120%;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    transform: translateY(0);
+    transition: transform 0.1s linear;
+}
+
+/* Map layer: Topographic or geospatial image */
+.parallax-layer.layer-map {
+    position: absolute;
+    width: 100%;
+    height: 120%;
+    background: url('images/earth2.gif') no-repeat center center;
+    background-size: cover;
+    opacity: 0.5;
+    transform: translateY(0);
+    transition: transform 0.1s linear;
+}
+
+/* Shapes layer: Animated geometric shapes */
+.parallax-layer.layer-shapes {
+    position: absolute;
+    width: 100%;
+    height: 120%;
+    background: transparent;
+    transform: translateY(0);
+    transition: transform 0.1s linear;
+}
+
+/* Pseudo-elements for animated shapes (hexagons) */
+.parallax-layer.layer-shapes::before,
+.parallax-layer.layer-shapes::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: floatShapes 15s ease-in-out infinite;
+}
+
+/* Position and delay for shapes */
+.parallax-layer.layer-shapes::before {
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+}
+.parallax-layer.layer-shapes::after {
+    top: 60%;
+    left: 70%;
+    animation-delay: 5s;
+}
+
+/* Keyframes for floating shapes */
+@keyframes floatShapes {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(50px, -50px) scale(1.2);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+}
+
+/* Hero content stays above */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .parallax-layer {
+        height: 110%;
+    }
+    .parallax-layer.layer-shapes::before,
+    .parallax-layer.layer-shapes::after {
+        width: 50px;
+        height: 50px;
+    }
+    @keyframes floatShapes {
+        0% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.3;
+        }
+        50% {
+            transform: translate(20px, -20px) scale(1.1);
+            opacity: 0.5;
+        }
+        100% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.3;
+        }
+    }
+}
 * {
     margin: 0;
     padding: 0;
