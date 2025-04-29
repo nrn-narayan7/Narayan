@@ -798,800 +798,271 @@ function getNewsArticles() {
     // In a real implementation, this would fetch from news APIs
     // For demonstration, we're using expanded sample data
     return [
-        [
-            {
-                title: "New Satellite Imagery Reveals Changes in Global Forest Cover",
-                summary: "Recent analysis of satellite data shows significant changes in forest cover across the globe, with implications for climate change and biodiversity.",
-                date: "2025-04-15",
-                image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
-                url: "https://news.mongabay.com/2024/05/new-satellite-platform-monitors-deforestation-across-ecosystems-worldwide/",
-                source: "GIS World",
-                category: "Around the World",
-                subcategory: "Environment"
-            },
-            {
-                title: "Advancements in LiDAR Technology for Urban Planning",
-                summary: "New developments in LiDAR technology are revolutionizing urban planning by providing more accurate 3D models of cities.",
-                date: "2025-04-10",
-                image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1344&q=80",
-                url: "https://www.businesswire.com/news/home/20250318209338/en/LiDAR-Industry-Outlook-2033-Urban-Planning-is-Creating-Billion-Dollar-Opportunities-with-Smart-Cities-Fueling-LiDAR-Demand---ResearchAndMarkets.com",
-                source: "Geospatial World",
-                category: "Around the World",
-                subcategory: "Technology"
-            },
-            {
-                title: "GPS Accuracy Improvements Coming with New Satellite Launch",
-                summary: "The upcoming launch of new GPS satellites promises to improve location accuracy for everyday users and specialized applications.",
-                date: "2025-04-05",
-                image: "https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
-                url: "https://spacenews.com/space-force-reassigns-gps-satellite-launch-from-ula-to-spacex/",
-                source: "Navigation News",
-                category: "Around the World",
-                subcategory: "Navigation"
-            },
-            {
-                title: "Remote Sensing Applications in Climate Change Monitoring",
-                summary: "Scientists are using advanced remote sensing techniques to track climate change impacts with unprecedented precision.",
-                date: "2025-04-02",
-                image: "https://images.unsplash.com/photo-1569503689347-a5dbdaca7c69?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-                url: "https://www.nps.gov/articles/000/ncpn_remote-sensing-and-climate-change-at-bryce-canyon-np.htm",
-                source: "Earth Observation Magazine",
-                category: "Around the World",
-                subcategory: "Climate"
-            },
-            {
-                title: "New Open-Source GIS Tools Transforming Humanitarian Response",
-                summary: "Humanitarian organizations are leveraging new open-source GIS tools to improve disaster response and aid distribution.",
-                date: "2025-04-18",
-                image: "https://images.unsplash.com/photo-1527219525722-f9767a7f2884?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80",
-                url: "https://reliefweb.int/report/world/unleashing-power-gis-together-ifrc-network-gis-training-platform",
-                source: "Humanitarian Tech Review",
-                category: "Around the World",
-                subcategory: "GIS"
-            },
-            {
-                title: "Drone Mapping Techniques Revolutionize Archaeological Research",
-                summary: "Archaeologists are using drone mapping to discover and document ancient sites that were previously inaccessible or unknown.",
-                date: "2025-04-12",
-                image: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-                url: "https://advexure.com/blogs/news/archaeological-surveying-drones-uncovering-the-past",
-                source: "Digital Archaeology Journal",
-                category: "Around the World",
-                subcategory: "Remote Sensing"
-            },
-            {
-                title: "Nepal Launches First Geospatial Data Portal for Public Access",
-                summary: "The Government of Nepal has launched a comprehensive geospatial data portal that provides public access to various spatial datasets.",
-                date: "2025-04-17",
-                image: "https://images.unsplash.com/photo-1544461772-722f2a1a21f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
-                url: "https://myrepublica.nagariknetwork.com/news/cbs-launches-ever-first-integrated-data-portal",
-                source: "Kathmandu Post",
-                category: "In Nepal",
-                subcategory: "Government"
-            },
-            {
-                title: "Kathmandu Valley Mapping Project Completes High-Resolution Survey",
-                summary: "A collaborative project has completed a high-resolution mapping survey of the Kathmandu Valley, providing valuable data for urban planning and disaster management.",
-                date: "2025-04-12",
-                image: "https://images.unsplash.com/photo-1558799401-7c3f139af685?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
-                url: "https://flyinglabs.org/blog/high-resolution-aerial-mapping-of-nepals-urban-centers-aids-urban-planning-during-covid-19",
-                source: "Nepal Times",
-                category: "In Nepal",
-                subcategory: "Urban Planning"
-            },
-            {
-                title: "Nepali Researchers Develop Low-Cost Drone for Agricultural Monitoring",
-                summary: "A team of researchers from Tribhuvan University has developed a low-cost drone system specifically designed for agricultural monitoring in Nepal's diverse terrain.",
-                date: "2025-04-08",
-                image: "https://images.unsplash.com/photo-1586094340401-10108413a8a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-                url: "https://www.researchgate.net/publication/380937964_DATAVEILLANCE_MANAGING_USING_MICRO_DRONE_TECHNOLOGY_FOR_AGRICULTURE_PURPOSE_IN_NEPAL",
-                source: "TechLekh",
-                category: "In Nepal",
-                subcategory: "Innovation"
-            },
-            {
-                title: "Nepal's First Digital Cadastre System Launched in Pilot Districts",
-                summary: "The Department of Land Management has launched Nepal's first digital cadastre system in selected pilot districts, aiming to modernize land records management.",
-                date: "2025-04-03",
-                image: "https://images.unsplash.com/photo-1590496793929-36417d3117de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1396&q=80",
-                url: "https://www.gim-international.com/content/news/rmsi-develops-land-record-information-management-system-for-nepal",
-                source: "Himalayan Times",
-                category: "In Nepal",
-                subcategory: "Land Management"
-            },
-            {
-                title: "Nepal Implements GIS-Based Disaster Risk Reduction System",
-                summary: "Nepal has implemented a new GIS-based system for disaster risk reduction, helping communities prepare for and respond to natural disasters.",
-                date: "2025-04-14",
-                image: "https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80",
-                url: "https://www.undrr.org/news/successful-localization-disaster-risk-reduction-efforts-nepal-supported-through-well",
-                source: "Nepal Disaster Review",
-                category: "In Nepal",
-                subcategory: "Disaster Management"
-            },
-            {
-                title: "Nepali Startup Develops Mobile App for Precision Farming",
-                summary: "A Nepali startup has developed a mobile application that uses satellite data to provide precision farming recommendations to small-scale farmers.",
-                date: "2025-04-10",
-                image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-                url: "https://www.researchgate.net/publication/388398904_KRISHIDRISHTI_TRANSFORMING_NEPALESE_FARMING_INTO_PRECISION_AGRICULTURE_WITH_SATELLITE_AND_DIGITAL_TECHNOLOGY",
-                source: "AgriTech Nepal",
-                category: "In Nepal",
-                subcategory: "Agriculture"
-            },
-            {
-                title: "Machine Learning Models Improve Flood Prediction Accuracy",
-                summary: "Researchers have developed new machine learning models that significantly improve the accuracy of flood predictions using geospatial data.",
-                date: "2025-04-18",
-                image: "https://images.unsplash.com/photo-1612096536102-930957a562da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-                url: "https://link.springer.com/article/10.1007/s11356-024-34286-7",
-                source: "AI in Geoscience",
-                category: "What's Buzzing",
-                subcategory: "AI Research"
-            },
-            {
-                title: "AI-Powered Image Recognition for Automated Map Updates",
-                summary: "New AI systems can automatically detect and categorize changes in satellite imagery, enabling faster and more accurate map updates.",
-                date: "2025-04-12",
-                image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80",
-                url: "https://www.4earthintelligence.com/insights/ai-powered-satellite-imagery-analytics/",
-                source: "Tech Innovations",
-                category: "What's Buzzing",
-                subcategory: "AI Technology"
-            },
-            {
-                title: "Neural Networks Revolutionize Land Cover Classification",
-                summary: "Deep learning neural networks are achieving unprecedented accuracy in classifying land cover from satellite imagery.",
-                date: "2025-04-08",
-                image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1365&q=80",
-                url: "https://github.com/aokdata/Land_Cover_Classification",
-                source: "AI Research Journal",
-                category: "What's Buzzing",
-                subcategory: "Deep Learning"
-            },
-            {
-                title: "Blockchain Applications in Land Registry Systems",
-                summary: "Several countries are piloting blockchain-based land registry systems to improve transparency and reduce fraud.",
-                date: "2025-04-14",
-                image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80",
-                url: "https://www.antiersolutions.com/blogs/blockchain-for-land-registry-how-it-works-and-why-it-matters/",
-                source: "Digital Governance",
-                category: "What's Buzzing",
-                subcategory: "Blockchain"
-            },
-            {
-                title: "Quantum Computing Applications in Geospatial Analysis",
-                summary: "Researchers are exploring how quantum computing could revolutionize complex geospatial analyses that are currently computationally intensive.",
-                date: "2025-04-16",
-                image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-                url: "https://ucalgary.scholaris.ca/items/ea5c942c-d22c-4319-8768-316b2e6f4d42",
-                source: "Quantum Computing Today",
-                category: "What's Buzzing",
-                subcategory: "Quantum Computing"
-            },
-            {
-                title: "Augmented Reality Transforms Field Data Collection",
-                summary: "New augmented reality tools are making field data collection more efficient and accurate for geospatial professionals.",
-                date: "2025-04-11",
-                image: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-                url: "https://www.periegesis.com/blogs/augmented-reality-AR-and-GIS",
-                source: "AR/VR Magazine",
-                category: "What's Buzzing",
-                subcategory: "Augmented Reality"
-            },
-            {
-                title: "How British Satellite Will Map World's Forests in Carbon Mission",
-                summary: "A British-designed satellite named Biomass is set to launch on a five-year mission to map and measure the carbon content of the world's forests, using advanced P-band synthetic aperture radar to generate detailed 3D maps.",
-                date: "2025-04-28",
-                image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80",
-                url: "https://www.thetimes.co.uk/article/how-british-satellite-will-map-worlds-forests-in-carbon-mission-z8npkttcc",
-                source: "The Times",
-                category: "Around the World",
-                subcategory: "Climate & Forestry"
-            },
-            {
-                title: "Satellite Imagery Startup Albedo Raises $100 Million at $285 Million Valuation",
-                summary: "Albedo, a satellite imagery startup, is raising a Series B funding round to develop very low-Earth-orbit satellites capable of capturing ultra-high-resolution imagery, serving industries like agriculture, energy, and defense.",
-                date: "2025-04-24",
-                image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1344&q=80",
-                url: "https://www.businessinsider.com/albedo-satellite-space-funding-round-2025-4",
-                source: "Business Insider",
-                category: "What's Buzzing",
-                subcategory: "Startups & Innovation"
-            },
-            {
-                title: "Satellite Images Reveal How Earth's Surface Moved During Deadly Myanmar Earthquake",
-                summary: "Earth-observing satellites have revealed significant ground shifts in central Myanmar following the devastating earthquakes in March, providing valuable data for understanding seismic impacts.",
-                date: "2025-04-28",
-                image: "https://images.unsplash.com/photo-1569503689347-a5dbdaca7c69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                url: "https://www.space.com/the-universe/earth/satellite-images-reveal-how-earths-surface-moved-during-deadly-myanmar-earthquake",
-                source: "Space.com",
-                category: "Around the World",
-                subcategory: "Natural Disasters"
-            },
-            {
-                title: "Develop Geospatial Technology Roadmap, Departments Urged",
-                summary: "Government departments in Bengaluru are being urged to develop a geospatial technology roadmap to enhance planning and decision-making processes.",
-                date: "2025-04-28",
-                image: "https://images.unsplash.com/photo-1544461772-722f2a1a21f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80",
-                url: "https://timesofindia.indiatimes.com/city/bengaluru/develop-geospatial-technology-roadmap-departments-urged/articleshow/120705225.cms",
-                source: "Times of India",
-                category: "Around the World",
-                subcategory: "Policy & Governance"
-            },
-            {
-                title: "Geospatial World Excellence Awards 2025 Celebrate Global Achievements",
-                summary: "The Geospatial World Excellence Awards 2025 recognized global achievements in technology, application, and policy innovation within the geospatial industry.",
-                date: "2025-04-26",
-                image: "",
-                url: "https://geospatialworld.net/news/press-release/geospatial-world-excellence-awards-2025-celebrate-global-achievements-in-technology-application-policy-innovation/",
-                source: "Geospatial World",
-                category: "What's Buzzing",
-                subcategory: "Events & Recognition"
-            },
-            {
-                title: "Top 10 Trends in GIS Technology for 2025",
-                summary: "LightBox outlines the top 10 trends in GIS technology for 2025, including AI-driven geospatial analysis, integration of IoT with GIS, and advancements in 3D GIS and digital twins.",
-                date: "2025-02-04",
-                image: "https://images.unsplash.com/photo-1612096536102-930957a562da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                url: "https://www.lightboxre.com/insight/top-10-trends-in-gis-technology-for-2025/",
-                source: "LightBox",
-                category: "What's Buzzing",
-                subcategory: "Tech Trends"
-            },
-            {
-                title: "The Future of Geospatial AI is Here – And It's Just Getting Started",
-                summary: "AI is transforming geospatial technology, making data processing faster and more actionable across industries like urban planning and disaster response.",
-                date: "2025-02-20",
-                image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1472&q=80",
-                url: "https://taylorgeospatial.org/the-future-of-geospatial-ai-is-here-and-its-just-getting-started/",
-                source: "Taylor Geospatial Institute",
-                category: "What's Buzzing",
-                subcategory: "Artificial Intelligence"
-            },
-            {
-                title: "The Future of Geospatial Technology: Key Trends to Watch in 2025",
-                summary: "AI and machine learning are revolutionizing geospatial technology, enabling faster and more accurate data analysis for applications like land use detection and natural disaster prediction.",
-                date: "2025-03-15",
-                image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1365&q=80",
-                url: "https://svencarto.com/the-future-of-geospatial-technology-key-trends-to-watch-in-2025/",
-                source: "Sven Carto",
-                category: "What's Buzzing",
-                subcategory: "Geospatial Technology"
-            },
-    
-                {
-                    title: "Hyperspectral Imaging Enhances Precision Agriculture in Australia",
-                    summary: "Australian farmers are adopting hyperspectral imaging to monitor crop health with unprecedented detail, improving yield predictions and reducing resource waste.",
-                    date: "2025-04-27",
-                    image: "https://images.unsplash.com/photo-1500595046743-ee5a6a800b47?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.agriculture.gov.au/research/hyperspectral-imaging-agriculture",
-                    source: "Australian Agriculture Journal",
-                    category: "Around the World",
-                    subcategory: "Agriculture"
-                },
-                {
-                    title: "AI-Driven Geospatial Analysis for Urban Heat Island Mitigation",
-                    summary: "Researchers in Japan are using AI to analyze satellite imagery and mitigate urban heat islands by optimizing green space placement in cities.",
-                    date: "2025-04-25",
-                    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1473&q=80",
-                    url: "https://www.jst.go.jp/urban-heat-island-ai-geospatial",
-                    source: "Japan Science and Technology Agency",
-                    category: "What's Buzzing",
-                    subcategory: "AI Technology"
-                },
-                {
-                    title: "Brazil Deploys Satellite Monitoring to Combat Illegal Mining",
-                    summary: "Brazil's government has launched a satellite-based monitoring system to detect and curb illegal mining activities in the Amazon rainforest.",
-                    date: "2025-04-22",
-                    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80",
-                    url: "https://www.inpe.br/amazon-monitoring-satellites",
-                    source: "Brazil National Institute for Space Research",
-                    category: "Around the World",
-                    subcategory: "Environment"
-                },
-                {
-                    title: "GIS-Based Coastal Erosion Mapping in the Maldives",
-                    summary: "A new GIS project in the Maldives maps coastal erosion to inform adaptive infrastructure planning against rising sea levels.",
-                    date: "2025-04-20",
-                    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1473&q=80",
-                    url: "https://www.maldives.gov.mv/coastal-erosion-gis",
-                    source: "Maldives Environmental Review",
-                    category: "Around the World",
-                    subcategory: "Climate"
-                },
-                {
-                    title: "Drones and LiDAR Transform Wildlife Conservation in Kenya",
-                    summary: "Kenyan conservationists are using drones equipped with LiDAR to map wildlife habitats and combat poaching in national parks.",
-                    date: "2025-04-18",
-                    image: "https://images.unsplash.com/photo-1513836279019-0b0e4d7b2086?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.kws.go.ke/drones-lidar-conservation",
-                    source: "Kenya Wildlife Service",
-                    category: "Around the World",
-                    subcategory: "Remote Sensing"
-                },
-                {
-                    title: "Nepal's Forest Cover Monitoring Using Sentinel-2 Data",
-                    summary: "Nepal's forestry department is leveraging Sentinel-2 satellite data to monitor forest cover changes and support conservation efforts.",
-                    date: "2025-04-15",
-                    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80",
-                    url: "https://www.dfrs.gov.np/sentinel-2-forest-monitoring",
-                    source: "Nepal Forestry Department",
-                    category: "In Nepal",
-                    subcategory: "Environment"
-                },
-                {
-                    title: "Smart City Planning in Dubai with 3D GIS Modeling",
-                    summary: "Dubai is implementing 3D GIS modeling to enhance smart city planning, optimizing infrastructure and traffic management.",
-                    date: "2025-04-14",
-                    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.dsc.gov.ae/3d-gis-smart-city",
-                    source: "Dubai Statistics Center",
-                    category: "Around the World",
-                    subcategory: "Urban Planning"
-                },
-                {
-                    title: "India's National Earthquake Monitoring System Upgraded with GIS",
-                    summary: "India has upgraded its earthquake monitoring system with GIS to improve real-time seismic data analysis and disaster response.",
-                    date: "2025-04-12",
-                    image: "https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1474&q=80",
-                    url: "https://www.ndma.gov.in/earthquake-gis-upgrade",
-                    source: "India National Disaster Management Authority",
-                    category: "Around the World",
-                    subcategory: "Disaster Management"
-                },
-                {
-                    title: "Satellite-Based Ocean Plastic Detection in the Pacific",
-                    summary: "A new initiative uses satellite imagery to detect and track ocean plastic pollution in the Pacific, aiding cleanup efforts.",
-                    date: "2025-04-10",
-                    image: "https://images.unsplash.com/photo-1569503689347-a5dbdaca7c69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.oceancleanup.com/satellite-plastic-detection",
-                    source: "Ocean Cleanup Initiative",
-                    category: "Around the World",
-                    subcategory: "Environment"
-                },
-                {
-                    title: "Nepali Startup Integrates IoT with GIS for Smart Agriculture",
-                    summary: "A Nepali startup has developed an IoT-GIS platform to provide real-time soil and weather data to farmers, enhancing productivity.",
-                    date: "2025-04-09",
-                    image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.techlekh.com/iot-gis-agriculture-nepal",
-                    source: "TechLekh",
-                    category: "In Nepal",
-                    subcategory: "Agriculture"
-                },
-                {
-                    title: "Machine Learning Optimizes Renewable Energy Site Selection",
-                    summary: "Machine learning models are being used to analyze geospatial data for optimal placement of solar and wind farms globally.",
-                    date: "2025-04-08",
-                    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1472&q=80",
-                    url: "https://www.renewableenergyworld.com/ml-site-selection",
-                    source: "Renewable Energy World",
-                    category: "What's Buzzing",
-                    subcategory: "AI Research"
-                },
-                {
-                    title: "South Africa Uses GIS to Map Water Scarcity Zones",
-                    summary: "South Africa has implemented a GIS-based system to map water scarcity zones, aiding equitable resource distribution.",
-                    date: "2025-04-07",
-                    image: "https://images.unsplash.com/photo-1590496793929-36417d3117de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1396&q=80",
-                    url: "https://www.dws.gov.za/gis-water-scarcity",
-                    source: "South Africa Department of Water and Sanitation",
-                    category: "Around the World",
-                    subcategory: "Water Management"
-                },
-                {
-                    title: "Augmented Reality for Real-Time Geospatial Data Visualization",
-                    summary: "New AR tools allow geospatial professionals to visualize GIS data in real-time during field surveys, improving accuracy.",
-                    date: "2025-04-06",
-                    image: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.arvrtech.com/ar-geospatial-visualization",
-                    source: "AR/VR Technology Review",
-                    category: "What's Buzzing",
-                    subcategory: "Augmented Reality"
-                },
-                {
-                    title: "Nepal Enhances Flood Prediction with AI and Satellite Data",
-                    summary: "Nepal's meteorology department is using AI and satellite data to improve flood prediction models for vulnerable regions.",
-                    date: "2025-04-05",
-                    image: "https://images.unsplash.com/photo-1612096536102-930957a562da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.dhm.gov.np/ai-flood-prediction",
-                    source: "Nepal Department of Hydrology and Meteorology",
-                    category: "In Nepal",
-                    subcategory: "Disaster Management"
-                },
-                {
-                    title: "Canada's Arctic Monitoring with Synthetic Aperture Radar",
-                    summary: "Canada is using SAR satellites to monitor Arctic ice melt and shipping routes, supporting climate research and navigation.",
-                    date: "2025-04-04",
-                    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80",
-                    url: "https://www.asc-csa.gc.ca/arctic-sar-monitoring",
-                    source: "Canadian Space Agency",
-                    category: "Around the World",
-                    subcategory: "Climate"
-                },
-                {
-                    title: "Blockchain Secures Geospatial Data Sharing in Europe",
-                    summary: "European agencies are piloting blockchain to ensure secure and transparent sharing of geospatial data across borders.",
-                    date: "2025-04-03",
-                    image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&auto=format&fit=crop&w=1332&q=80",
-                    url: "https://www.eurogeographics.org/blockchain-geospatial",
-                    source: "EuroGeographics",
-                    category: "What's Buzzing",
-                    subcategory: "Blockchain"
-                },
-                {
-                    title: "Vietnam's Rice Yield Forecasting with Remote Sensing",
-                    summary: "Vietnam is using remote sensing to forecast rice yields, helping farmers and policymakers plan for food security.",
-                    date: "2025-04-02",
-                    image: "https://images.unsplash.com/photo-1586094340401-10108413a8a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.mard.gov.vn/remote-sensing-rice",
-                    source: "Vietnam Ministry of Agriculture",
-                    category: "Around the World",
-                    subcategory: "Agriculture"
-                },
-                {
-                    title: "Nepal's Urban Traffic Management with GIS Analytics",
-                    summary: "Kathmandu is implementing GIS analytics to optimize traffic flow and reduce congestion in urban areas.",
-                    date: "2025-04-01",
-                    image: "https://images.unsplash.com/photo-1558799401-7c3f139af685?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80",
-                    url: "https://www.ktm.gov.np/gis-traffic-management",
-                    source: "Kathmandu Metropolitan City",
-                    category: "In Nepal",
-                    subcategory: "Urban Planning"
-                },
-                {
-                    title: "Quantum GIS Algorithms for Faster Spatial Analysis",
-                    summary: "Researchers are developing quantum computing algorithms to accelerate GIS-based spatial analysis for large datasets.",
-                    date: "2025-03-31",
-                    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.quantumgis.org/quantum-algorithms",
-                    source: "Quantum GIS Journal",
-                    category: "What's Buzzing",
-                    subcategory: "Quantum Computing"
-                },
-                {
-                    title: "Chile's Volcanic Activity Monitored with Satellite Imagery",
-                    summary: "Chile is using satellite imagery to monitor volcanic activity, improving early warning systems for eruptions.",
-                    date: "2025-03-30",
-                    image: "https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1474&q=80",
-                    url: "https://www.sernageomin.cl/volcanic-satellite-monitoring",
-                    source: "Chile National Geology and Mining Service",
-                    category: "Around the World",
-                    subcategory: "Natural Disasters"
-                },
-                {
-                    title: "AI-Powered Landslide Risk Mapping in the Philippines",
-                    summary: "The Philippines is using AI to analyze geospatial data for landslide risk mapping, enhancing disaster preparedness.",
-                    date: "2025-03-29",
-                    image: "https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1474&q=80",
-                    url: "https://www.phivolcs.dost.gov.ph/ai-landslide-mapping",
-                    source: "Philippine Institute of Volcanology and Seismology",
-                    category: "Around the World",
-                    subcategory: "Disaster Management"
-                },
-                {
-                    title: "Nepal's Glacier Monitoring with High-Resolution Satellites",
-                    summary: "Nepal is using high-resolution satellite imagery to monitor glacier retreat in the Himalayas, aiding climate research.",
-                    date: "2025-03-28",
-                    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80",
-                    url: "https://www.icimod.org/glacier-monitoring-nepal",
-                    source: "ICIMOD",
-                    category: "In Nepal",
-                    subcategory: "Climate"
-                },
-                {
-                    title: "Mexico's Deforestation Tracking with Machine Learning",
-                    summary: "Mexico is employing machine learning to track deforestation patterns using satellite imagery, supporting conservation policies.",
-                    date: "2025-03-27",
-                    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80",
-                    url: "https://www.conabio.gob.mx/ml-deforestation",
-                    source: "Mexico National Biodiversity Commission",
-                    category: "Around the World",
-                    subcategory: "Environment"
-                },
-                {
-                    title: "IoT and GIS Integration for Smart Waste Management in Singapore",
-                    summary: "Singapore is integrating IoT sensors with GIS to optimize waste collection routes, reducing costs and emissions.",
-                    date: "2025-03-26",
-                    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.nea.gov.sg/iot-gis-waste-management",
-                    source: "Singapore National Environment Agency",
-                    category: "Around the World",
-                    subcategory: "Urban Planning"
-                },
-                {
-                    title: "Deep Learning for Coral Reef Health Monitoring",
-                    summary: "Deep learning models are analyzing satellite imagery to monitor coral reef health, aiding global conservation efforts.",
-                    date: "2025-03-25",
-                    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1473&q=80",
-                    url: "https://www.coralguardian.org/dl-coral-monitoring",
-                    source: "Coral Guardian",
-                    category: "What's Buzzing",
-                    subcategory: "Deep Learning"
-                },
-                {
-                    title: "Nepal's Land Use Planning with Open-Source GIS Tools",
-                    summary: "Nepal is adopting open-source GIS tools to improve land use planning and prevent urban sprawl.",
-                    date: "2025-03-24",
-                    image: "https://images.unsplash.com/photo-1590496793929-36417d3117de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1396&q=80",
-                    url: "https://www.molrm.gov.np/open-source-gis",
-                    source: "Nepal Ministry of Land Reform",
-                    category: "In Nepal",
-                    subcategory: "Land Management"
-                },
-                {
-                    title: "Russia's Permafrost Monitoring with Remote Sensing",
-                    summary: "Russia is using remote sensing to monitor permafrost thaw, informing infrastructure planning in Arctic regions.",
-                    date: "2025-03-23",
-                    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80",
-                    url: "https://www.roscosmos.ru/permafrost-monitoring",
-                    source: "Roscosmos",
-                    category: "Around the World",
-                    subcategory: "Climate"
-                },
-                {
-                    title: "GIS-Based Public Health Mapping in Nigeria",
-                    summary: "Nigeria is using GIS to map disease outbreaks, improving public health response and resource allocation.",
-                    date: "2025-03-22",
-                    image: "https://images.unsplash.com/photo-1527219525722-f9767a7f2884?ixlib=rb-4.0.3&auto=format&fit=crop&w=1473&q=80",
-                    url: "https://www.health.gov.ng/gis-public-health",
-                    source: "Nigeria Ministry of Health",
-                    category: "Around the World",
-                    subcategory: "Public Health"
-                },
-                {
-                    title: "Satellite Video Analytics for Traffic Monitoring in China",
-                    summary: "China is using satellite video analytics to monitor urban traffic patterns, improving city planning and congestion management.",
-                    date: "2025-03-21",
-                    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.mot.gov.cn/satellite-traffic-analytics",
-                    source: "China Ministry of Transport",
-                    category: "Around the World",
-                    subcategory: "Urban Planning"
-                },
-                {
-                    title: "Nepal's Heritage Site Mapping with Drone Technology",
-                    summary: "Nepal is using drones to map cultural heritage sites, aiding preservation and tourism planning.",
-                    date: "2025-03-20",
-                    image: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.doa.gov.np/drone-heritage-mapping",
-                    source: "Nepal Department of Archaeology",
-                    category: "In Nepal",
-                    subcategory: "Remote Sensing"
-                },
-                {
-                    title: "AI for Automated Wetland Mapping in the USA",
-                    summary: "The USA is using AI to automate wetland mapping from satellite imagery, supporting environmental protection efforts.",
-                    date: "2025-03-19",
-                    image: "https://images.unsplash.com/photo-1569503689347-a5dbdaca7c69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.epa.gov/ai-wetland-mapping",
-                    source: "US Environmental Protection Agency",
-                    category: "What's Buzzing",
-                    subcategory: "AI Technology"
-                },
-                {
-                    title: "Thailand's Mangrove Restoration with Geospatial Data",
-                    summary: "Thailand is using geospatial data to plan mangrove restoration projects, enhancing coastal ecosystems.",
-                    date: "2025-03-18",
-                    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1473&q=80",
-                    url: "https://www.dnp.go.th/mangrove-geospatial",
-                    source: "Thailand Department of National Parks",
-                    category: "Around the World",
-                    subcategory: "Environment"
-                },
-                {
-                    title: "Quantum Sensors for High-Precision Geospatial Mapping",
-                    summary: "Quantum sensors are being developed to enhance the precision of geospatial mapping for navigation and surveying.",
-                    date: "2025-03-17",
-                    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.quantumtech.com/quantum-sensors-mapping",
-                    source: "Quantum Technology Review",
-                    category: "What's Buzzing",
-                    subcategory: "Quantum Computing"
-                },
-                {
-                    title: "Nepal's Renewable Energy Mapping with GIS",
-                    summary: "Nepal is using GIS to map potential sites for renewable energy projects, supporting sustainable development.",
-                    date: "2025-03-16",
-                    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1472&q=80",
-                    url: "https://www.aecc.gov.np/gis-renewable-energy",
-                    source: "Nepal Alternative Energy Centre",
-                    category: "In Nepal",
-                    subcategory: "Energy"
-                },
-                {
-                    title: "Argentina's Drought Monitoring with Satellite Data",
-                    summary: "Argentina is using satellite data to monitor drought conditions, aiding farmers and water management authorities.",
-                    date: "2025-03-15",
-                    image: "https://images.unsplash.com/photo-1590496793929-36417d3117de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1396&q=80",
-                    url: "https://www.inta.gob.ar/drought-satellite-monitoring",
-                    source: "Argentina National Agricultural Technology Institute",
-                    category: "Around the World",
-                    subcategory: "Agriculture"
-                },
-                {
-                    title: "GIS for Refugee Camp Planning in Jordan",
-                    summary: "Jordan is using GIS to plan and manage refugee camps, optimizing resource allocation and infrastructure.",
-                    date: "2025-03-14",
-                    image: "https://images.unsplash.com/photo-1527219525722-f9767a7f2884?ixlib=rb-4.0.3&auto=format&fit=crop&w=1473&q=80",
-                    url: "https://www.unhcr.org/jordan-gis-refugee-camps",
-                    source: "UNHCR Jordan",
-                    category: "Around the World",
-                    subcategory: "Humanitarian"
-                },
-                {
-                    title: "Machine Learning for Soil Moisture Mapping in Ethiopia",
-                    summary: "Ethiopia is using machine learning to map soil moisture from satellite data, supporting agricultural planning.",
-                    date: "2025-03-13",
-                    image: "https://images.unsplash.com/photo-1586094340401-10108413a8a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.moag.gov.et/ml-soil-moisture",
-                    source: "Ethiopia Ministry of Agriculture",
-                    category: "Around the World",
-                    subcategory: "Agriculture"
-                },
-                {
-                    title: "Nepal's Air Quality Monitoring with Satellite Sensors",
-                    summary: "Nepal is using satellite sensors to monitor air quality in urban areas, informing public health policies.",
-                    date: "2025-03-12",
-                    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1472&q=80",
-                    url: "https://www.moe.gov.np/satellite-air-quality",
-                    source: "Nepal Ministry of Environment",
-                    category: "In Nepal",
-                    subcategory: "Public Health"
-                },
-                {
-                    title: "AI for Real-Time Wildfire Detection in Australia",
-                    summary: "Australia is deploying AI to analyze satellite imagery for real-time wildfire detection, improving response times.",
-                    date: "2025-03-11",
-                    image: "https://images.unsplash.com/photo-1612096536102-930957a562da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.csiro.au/ai-wildfire-detection",
-                    source: "CSIRO",
-                    category: "What's Buzzing",
-                    subcategory: "AI Technology"
-                },
-                {
-                    title: "Indonesia's Peatland Fire Monitoring with Remote Sensing",
-                    summary: "Indonesia is using remote sensing to monitor peatland fires, reducing environmental and health impacts.",
-                    date: "2025-03-10",
-                    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80",
-                    url: "https://www.brg.go.id/peatland-fire-monitoring",
-                    source: "Indonesia Peatland Restoration Agency",
-                    category: "Around the World",
-                    subcategory: "Environment"
-                },
-                {
-                    title: "Blockchain for Geospatial Data Provenance in Canada",
-                    summary: "Canada is exploring blockchain to ensure the provenance and integrity of geospatial data in public databases.",
-                    date: "2025-03-09",
-                    image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&auto=format&fit=crop&w=1332&q=80",
-                    url: "https://www.nrcan.gc.ca/blockchain-geospatial",
-                    source: "Natural Resources Canada",
-                    category: "What's Buzzing",
-                    subcategory: "Blockchain"
-                },
-                {
-                    title: "Nepal's Water Resource Mapping with GIS",
-                    summary: "Nepal is using GIS to map water resources, supporting irrigation and hydropower development.",
-                    date: "2025-03-08",
-                    image: "https://images.unsplash.com/photo-1590496793929-36417d3117de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1396&q=80",
-                    url: "https://www.dwri.gov.np/gis-water-resources",
-                    source: "Nepal Department of Water Resources",
-                    category: "In Nepal",
-                    subcategory: "Water Management"
-                },
-                {
-                    title: "Satellite-Based Crop Insurance in India",
-                    summary: "India is using satellite imagery to develop crop insurance models, ensuring fair payouts for farmers.",
-                    date: "2025-03-07",
-                    image: "https://images.unsplash.com/photo-1586094340401-10108413a8a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.irdai.gov.in/satellite-crop-insurance",
-                    source: "Insurance Regulatory Authority of India",
-                    category: "Around the World",
-                    subcategory: "Agriculture"
-                },
-                {
-                    title: "GIS for Urban Resilience Planning in Bangladesh",
-                    summary: "Bangladesh is using GIS to plan urban resilience against floods and cyclones, protecting coastal cities.",
-                    date: "2025-03-06",
-                    image: "https://images.unsplash.com/photo-1612096536102-930957a562da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.lged.gov.bd/gis-urban-resilience",
-                    source: "Bangladesh Local Government Engineering Department",
-                    category: "Around the World",
-                    subcategory: "Urban Planning"
-                },
-                {
-                    title: "Deep Learning for Glacier Mass Balance in Greenland",
-                    summary: "Deep learning is being used to estimate glacier mass balance in Greenland from satellite data, aiding climate models.",
-                    date: "2025-03-05",
-                    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80",
-                    url: "https://www.geus.dk/dl-glacier-mass",
-                    source: "Geological Survey of Denmark and Greenland",
-                    category: "What's Buzzing",
-                    subcategory: "Deep Learning"
-                },
-                {
-                    title: "Nepal's Biodiversity Mapping with Remote Sensing",
-                    summary: "Nepal is using remote sensing to map biodiversity hotspots, supporting conservation and ecotourism.",
-                    date: "2025-03-04",
-                    image: "https://images.unsplash.com/photo-1513836279019-0b0e4d7b2086?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.dnpwc.gov.np/biodiversity-remote-sensing",
-                    source: "Nepal Department of National Parks",
-                    category: "In Nepal",
-                    subcategory: "Environment"
-                },
-                {
-                    title: "AI for Urban Growth Prediction in South Korea",
-                    summary: "South Korea is using AI to predict urban growth patterns from geospatial data, guiding sustainable development.",
-                    date: "2025-03-03",
-                    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.molit.go.kr/ai-urban-growth",
-                    source: "South Korea Ministry of Land",
-                    category: "What's Buzzing",
-                    subcategory: "AI Technology"
-                },
-                {
-                    title: "Satellite Monitoring of Air Pollution in Pakistan",
-                    summary: "Pakistan is using satellite data to monitor air pollution levels, informing public health and environmental policies.",
-                    date: "2025-03-02",
-                    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1472&q=80",
-                    url: "https://www.epd.gov.pk/satellite-air-pollution",
-                    source: "Pakistan Environmental Protection Agency",
-                    category: "Around the World",
-                    subcategory: "Public Health"
-                },
-                {
-                    title: "GIS for Mining Exploration in Mongolia",
-                    summary: "Mongolia is using GIS to map mineral deposits, streamlining mining exploration and reducing environmental impacts.",
-                    date: "2025-03-01",
-                    image: "https://images.unsplash.com/photo-1590496793929-36417d3117de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1396&q=80",
-                    url: "https://www.mram.gov.mn/gis-mining-exploration",
-                    source: "Mongolia Mineral Resources Authority",
-                    category: "Around the World",
-                    subcategory: "Mining"
-                },
-                {
-                    title: "Nepal's Earthquake Risk Mapping with GIS",
-                    summary: "Nepal is enhancing earthquake risk mapping with GIS to improve urban planning and disaster preparedness.",
-                    date: "2025-02-28",
-                    image: "https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1474&q=80",
-                    url: "https://www.nset.org.np/gis-earthquake-risk",
-                    source: "National Earthquake Monitoring Centre",
-                    category: "In Nepal",
-                    subcategory: "Disaster Management"
-                },
-                {
-                    title: "Satellite-Based Fisheries Management in Norway",
-                    summary: "Norway is using satellite imagery to monitor fish stocks, supporting sustainable fisheries management.",
-                    date: "2025-02-27",
-                    image: "https://images.unsplash.com/photo-1569503689347-a5dbdaca7c69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.fiskeridir.no/satellite-fisheries",
-                    source: "Norway Directorate of Fisheries",
-                    category: "Around the World",
-                    subcategory: "Fisheries"
-                },
-                {
-                    title: "Augmented Reality for Geospatial Training in Germany",
-                    summary: "Germany is using AR to train geospatial professionals, enhancing field data collection and analysis skills.",
-                    date: "2025-02-26",
-                    image: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-                    url: "https://www.dlr.de/ar-geospatial-training",
-                    source: "German Aerospace Center",
-                    category: "What's Buzzing",
-                    subcategory: "Augmented Reality"
-                }
-            
-        ]
-
-        
+        {
+            title: "New Satellite Imagery Reveals Changes in Global Forest Cover",
+            summary: "Recent analysis of satellite data shows significant changes in forest cover across the globe, with implications for climate change and biodiversity.",
+            date: "2025-04-15",
+            image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
+            url: "https://news.mongabay.com/2024/05/new-satellite-platform-monitors-deforestation-across-ecosystems-worldwide/",
+            source: "GIS World",
+            category: "Around the World",
+            subcategory: "Environment"
+        },
+        {
+            title: "Advancements in LiDAR Technology for Urban Planning",
+            summary: "New developments in LiDAR technology are revolutionizing urban planning by providing more accurate 3D models of cities.",
+            date: "2025-04-10",
+            image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1344&q=80",
+            url: "https://www.businesswire.com/news/home/20250318209338/en/LiDAR-Industry-Outlook-2033-Urban-Planning-is-Creating-Billion-Dollar-Opportunities-with-Smart-Cities-Fueling-LiDAR-Demand---ResearchAndMarkets.com",
+            source: "Geospatial World",
+            category: "Around the World",
+            subcategory: "Technology"
+        },
+        {
+            title: "GPS Accuracy Improvements Coming with New Satellite Launch",
+            summary: "The upcoming launch of new GPS satellites promises to improve location accuracy for everyday users and specialized applications.",
+            date: "2025-04-05",
+            image: "https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
+            url: "https://spacenews.com/space-force-reassigns-gps-satellite-launch-from-ula-to-spacex/",
+            source: "Navigation News",
+            category: "Around the World",
+            subcategory: "Navigation"
+        },
+        {
+            title: "Remote Sensing Applications in Climate Change Monitoring",
+            summary: "Scientists are using advanced remote sensing techniques to track climate change impacts with unprecedented precision.",
+            date: "2025-04-02",
+            image: "https://images.unsplash.com/photo-1569503689347-a5dbdaca7c69?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+            url: "https://www.nps.gov/articles/000/ncpn_remote-sensing-and-climate-change-at-bryce-canyon-np.htm",
+            source: "Earth Observation Magazine",
+            category: "Around the World",
+            subcategory: "Climate"
+        },
+        {
+            title: "New Open-Source GIS Tools Transforming Humanitarian Response",
+            summary: "Humanitarian organizations are leveraging new open-source GIS tools to improve disaster response and aid distribution.",
+            date: "2025-04-18",
+            image: "https://images.unsplash.com/photo-1527219525722-f9767a7f2884?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80",
+            url: "https://reliefweb.int/report/world/unleashing-power-gis-together-ifrc-network-gis-training-platform",
+            source: "Humanitarian Tech Review",
+            category: "Around the World",
+            subcategory: "GIS"
+        },
+        {
+            title: "Drone Mapping Techniques Revolutionize Archaeological Research",
+            summary: "Archaeologists are using drone mapping to discover and document ancient sites that were previously inaccessible or unknown.",
+            date: "2025-04-12",
+            image: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+            url: "https://advexure.com/blogs/news/archaeological-surveying-drones-uncovering-the-past",
+            source: "Digital Archaeology Journal",
+            category: "Around the World",
+            subcategory: "Remote Sensing"
+        },
+        {
+            title: "Nepal Launches First Geospatial Data Portal for Public Access",
+            summary: "The Government of Nepal has launched a comprehensive geospatial data portal that provides public access to various spatial datasets.",
+            date: "2025-04-17",
+            image: "https://images.unsplash.com/photo-1544461772-722f2a1a21f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
+            url: "https://myrepublica.nagariknetwork.com/news/cbs-launches-ever-first-integrated-data-portal",
+            source: "Kathmandu Post",
+            category: "In Nepal",
+            subcategory: "Government"
+        },
+        {
+            title: "Kathmandu Valley Mapping Project Completes High-Resolution Survey",
+            summary: "A collaborative project has completed a high-resolution mapping survey of the Kathmandu Valley, providing valuable data for urban planning and disaster management.",
+            date: "2025-04-12",
+            image: "https://images.unsplash.com/photo-1558799401-7c3f139af685?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
+            url: "https://flyinglabs.org/blog/high-resolution-aerial-mapping-of-nepals-urban-centers-aids-urban-planning-during-covid-19",
+            source: "Nepal Times",
+            category: "In Nepal",
+            subcategory: "Urban Planning"
+        },
+        {
+            title: "Nepali Researchers Develop Low-Cost Drone for Agricultural Monitoring",
+            summary: "A team of researchers from Tribhuvan University has developed a low-cost drone system specifically designed for agricultural monitoring in Nepal's diverse terrain.",
+            date: "2025-04-08",
+            image: "https://images.unsplash.com/photo-1586094340401-10108413a8a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+            url: "https://www.researchgate.net/publication/380937964_DATAVEILLANCE_MANAGING_USING_MICRO_DRONE_TECHNOLOGY_FOR_AGRICULTURE_PURPOSE_IN_NEPAL",
+            source: "TechLekh",
+            category: "In Nepal",
+            subcategory: "Innovation"
+        },
+        {
+            title: "Nepal's First Digital Cadastre System Launched in Pilot Districts",
+            summary: "The Department of Land Management has launched Nepal's first digital cadastre system in selected pilot districts, aiming to modernize land records management.",
+            date: "2025-04-03",
+            image: "https://images.unsplash.com/photo-1590496793929-36417d3117de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1396&q=80",
+            url: "https://www.gim-international.com/content/news/rmsi-develops-land-record-information-management-system-for-nepal",
+            source: "Himalayan Times",
+            category: "In Nepal",
+            subcategory: "Land Management"
+        },
+        {
+            title: "Nepal Implements GIS-Based Disaster Risk Reduction System",
+            summary: "Nepal has implemented a new GIS-based system for disaster risk reduction, helping communities prepare for and respond to natural disasters.",
+            date: "2025-04-14",
+            image: "https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80",
+            url: "https://www.undrr.org/news/successful-localization-disaster-risk-reduction-efforts-nepal-supported-through-well",
+            source: "Nepal Disaster Review",
+            category: "In Nepal",
+            subcategory: "Disaster Management"
+        },
+        {
+            title: "Nepali Startup Develops Mobile App for Precision Farming",
+            summary: "A Nepali startup has developed a mobile application that uses satellite data to provide precision farming recommendations to small-scale farmers.",
+            date: "2025-04-10",
+            image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+            url: "https://www.researchgate.net/publication/388398904_KRISHIDRISHTI_TRANSFORMING_NEPALESE_FARMING_INTO_PRECISION_AGRICULTURE_WITH_SATELLITE_AND_DIGITAL_TECHNOLOGY",
+            source: "AgriTech Nepal",
+            category: "In Nepal",
+            subcategory: "Agriculture"
+        },
+        {
+            title: "Machine Learning Models Improve Flood Prediction Accuracy",
+            summary: "Researchers have developed new machine learning models that significantly improve the accuracy of flood predictions using geospatial data.",
+            date: "2025-04-18",
+            image: "https://images.unsplash.com/photo-1612096536102-930957a562da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+            url: "https://link.springer.com/article/10.1007/s11356-024-34286-7",
+            source: "AI in Geoscience",
+            category: "What's Buzzing",
+            subcategory: "AI Research"
+        },
+        {
+            title: "AI-Powered Image Recognition for Automated Map Updates",
+            summary: "New AI systems can automatically detect and categorize changes in satellite imagery, enabling faster and more accurate map updates.",
+            date: "2025-04-12",
+            image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80",
+            url: "https://www.4earthintelligence.com/insights/ai-powered-satellite-imagery-analytics/",
+            source: "Tech Innovations",
+            category: "What's Buzzing",
+            subcategory: "AI Technology"
+        },
+        {
+            title: "Neural Networks Revolutionize Land Cover Classification",
+            summary: "Deep learning neural networks are achieving unprecedented accuracy in classifying land cover from satellite imagery.",
+            date: "2025-04-08",
+            image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1365&q=80",
+            url: "https://github.com/aokdata/Land_Cover_Classification",
+            source: "AI Research Journal",
+            category: "What's Buzzing",
+            subcategory: "Deep Learning"
+        },
+        {
+            title: "Blockchain Applications in Land Registry Systems",
+            summary: "Several countries are piloting blockchain-based land registry systems to improve transparency and reduce fraud.",
+            date: "2025-04-14",
+            image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80",
+            url: "https://www.antiersolutions.com/blogs/blockchain-for-land-registry-how-it-works-and-why-it-matters/",
+            source: "Digital Governance",
+            category: "What's Buzzing",
+            subcategory: "Blockchain"
+        },
+        {
+            title: "Quantum Computing Applications in Geospatial Analysis",
+            summary: "Researchers are exploring how quantum computing could revolutionize complex geospatial analyses that are currently computationally intensive.",
+            date: "2025-04-16",
+            image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+            url: "https://ucalgary.scholaris.ca/items/ea5c942c-d22c-4319-8768-316b2e6f4d42",
+            source: "Quantum Computing Today",
+            category: "What's Buzzing",
+            subcategory: "Quantum Computing"
+        },
+        {
+            title: "Augmented Reality Transforms Field Data Collection",
+            summary: "New augmented reality tools are making field data collection more efficient and accurate for geospatial professionals.",
+            date: "2025-04-11",
+            image: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+            url: "https://www.periegesis.com/blogs/augmented-reality-AR-and-GIS",
+            source: "AR/VR Magazine",
+            category: "What's Buzzing",
+            subcategory: "Augmented Reality"
+        },
+        {
+            title: "How British Satellite Will Map World's Forests in Carbon Mission",
+            summary: "A British-designed satellite named Biomass is set to launch on a five-year mission to map and measure the carbon content of the world's forests, using advanced P-band synthetic aperture radar to generate detailed 3D maps.",
+            date: "2025-04-28",
+            image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80",
+            url: "https://www.thetimes.co.uk/article/how-british-satellite-will-map-worlds-forests-in-carbon-mission-z8npkttcc",
+            source: "The Times",
+            category: "Around the World",
+            subcategory: "Climate & Forestry"
+        },
+        {
+            title: "Satellite Imagery Startup Albedo Raises $100 Million at $285 Million Valuation",
+            summary: "Albedo, a satellite imagery startup, is raising a Series B funding round to develop very low-Earth-orbit satellites capable of capturing ultra-high-resolution imagery, serving industries like agriculture, energy, and defense.",
+            date: "2025-04-24",
+            image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1344&q=80",
+            url: "https://www.businessinsider.com/albedo-satellite-space-funding-round-2025-4",
+            source: "Business Insider",
+            category: "What's Buzzing",
+            subcategory: "Startups & Innovation"
+        },
+        {
+            title: "Satellite Images Reveal How Earth's Surface Moved During Deadly Myanmar Earthquake",
+            summary: "Earth-observing satellites have revealed significant ground shifts in central Myanmar following the devastating earthquakes in March, providing valuable data for understanding seismic impacts.",
+            date: "2025-04-28",
+            image: "https://images.unsplash.com/photo-1569503689347-a5dbdaca7c69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+            url: "https://www.space.com/the-universe/earth/satellite-images-reveal-how-earths-surface-moved-during-deadly-myanmar-earthquake",
+            source: "Space.com",
+            category: "Around the World",
+            subcategory: "Natural Disasters"
+        },
+        {
+            title: "Develop Geospatial Technology Roadmap, Departments Urged",
+            summary: "Government departments in Bengaluru are being urged to develop a geospatial technology roadmap to enhance planning and decision-making processes.",
+            date: "2025-04-28",
+            image: "https://images.unsplash.com/photo-1544461772-722f2a1a21f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80",
+            url: "https://timesofindia.indiatimes.com/city/bengaluru/develop-geospatial-technology-roadmap-departments-urged/articleshow/120705225.cms",
+            source: "Times of India",
+            category: "Around the World",
+            subcategory: "Policy & Governance"
+        },
+        {
+            title: "Geospatial World Excellence Awards 2025 Celebrate Global Achievements",
+            summary: "The Geospatial World Excellence Awards 2025 recognized global achievements in technology, application, and policy innovation within the geospatial industry.",
+            date: "2025-04-26",
+            image: "",
+            url: "https://geospatialworld.net/news/press-release/geospatial-world-excellence-awards-2025-celebrate-global-achievements-in-technology-application-policy-innovation/",
+            source: "Geospatial World",
+            category: "What's Buzzing",
+            subcategory: "Events & Recognition"
+        },
+        {
+            title: "Top 10 Trends in GIS Technology for 2025",
+            summary: "LightBox outlines the top 10 trends in GIS technology for 2025, including AI-driven geospatial analysis, integration of IoT with GIS, and advancements in 3D GIS and digital twins.",
+            date: "2025-02-04",
+            image: "https://images.unsplash.com/photo-1612096536102-930957a562da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+            url: "https://www.lightboxre.com/insight/top-10-trends-in-gis-technology-for-2025/",
+            source: "LightBox",
+            category: "What's Buzzing",
+            subcategory: "Tech Trends"
+        },
+        {
+            title: "The Future of Geospatial AI is Here – And It's Just Getting Started",
+            summary: "AI is transforming geospatial technology, making data processing faster and more actionable across industries like urban planning and disaster response.",
+            date: "2025-02-20",
+            image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1472&q=80",
+            url: "https://taylorgeospatial.org/the-future-of-geospatial-ai-is-here-and-its-just-getting-started/",
+            source: "Taylor Geospatial Institute",
+            category: "What's Buzzing",
+            subcategory: "Artificial Intelligence"
+        },
+        {
+            title: "The Future of Geospatial Technology: Key Trends to Watch in 2025",
+            summary: "AI and machine learning are revolutionizing geospatial technology, enabling faster and more accurate data analysis for applications like land use detection and natural disaster prediction.",
+            date: "2025-03-15",
+            image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1365&q=80",
+            url: "https://svencarto.com/the-future-of-geospatial-technology-key-trends-to-watch-in-2025/",
+            source: "Sven Carto",
+            category: "What's Buzzing",
+            subcategory: "Geospatial Technology"
         }
-
-        
     ];
 }
 
 // In a production environment, this would be replaced with actual API calls:
-
+/*
 function fetchNewsArticles() {
     // Example API endpoints for different categories
     const apiEndpoints = {
@@ -1648,4 +1119,4 @@ function fetchNewsArticles() {
             showNotification('error', 'Error Loading News', 'There was a problem loading the latest news. Please try again later.');
         });
 }
-
+*/
