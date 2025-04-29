@@ -529,6 +529,46 @@ function getRelatedArticles(currentId, category) {
     return relatedArticles;
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = new bootstrap.Modal(document.getElementById('articleModal'));
+    const modalTitle = document.getElementById('articleModalLabel');
+    const modalContent = document.getElementById('articleContent');
+
+    // Fetch full article by ID
+    const fetchFullArticle = async (articleId) => {
+        try {
+            const response = await fetch(`/api/articles/${articleId}`); // Adjust to your API endpoint
+            if (!response.ok) throw new Error('Article not found');
+            const article = await response.json();
+            return article;
+        } catch (error) {
+            console.error('Error fetching full article:', error);
+            return null;
+        }
+    };
+
+    // Handle button click
+    document.addEventListener('click', async (event) => {
+        if (event.target.classList.contains('read-full-article')) {
+            const articleId = event.target.getAttribute('data-article-id');
+            if (!articleId) {
+                console.error('No article ID found');
+                return;
+            }
+
+            const article = await fetchFullArticle(articleId);
+            if (article) {
+                modalTitle.textContent = article.title;
+                modalContent.textContent = article.fullContent || 'No content available';
+                modal.show();
+            } else {
+                modalTitle.textContent = 'Error';
+                modalContent.textContent = 'Failed to load article. Please try again.';
+                modal.show();
+            }
+        }
+    });
+});
 // Generate article tags
 function generateArticleTags(article) {
     // Generate tags based on article data

@@ -230,7 +230,8 @@ function refreshNewsFeed(isAutoRefresh = false) {
                     
                     // For demo purposes, we'll randomly decide if there's new content
                     // In a real implementation, you would compare the articles from the API
-                    hasNewContent = Math.random() > 0.3; // 70% chance of new content
+                    // Always refresh display, remove random check. Proper check needed for 'new content' message.
+                    hasNewContent = true; // Assume new content for display update
                     
                     if (hasNewContent) {
                         // Update the cached articles
@@ -504,22 +505,17 @@ function createArticleElement(article) {
         readMoreBtn.addEventListener('click', function(e) {
             e.preventDefault();
             try {
-                const articleId = this.getAttribute('data-article-id');
-                
-                if (articleId) {
-                    // Call the openArticleViewer function with the article ID
-                    if (typeof openArticleViewer === 'function') {
-                        openArticleViewer(parseInt(articleId));
-                    } else {
-                        console.error('openArticleViewer function not found');
-                        showNotification('error', 'Error', 'Could not open the article viewer. Please try again later.');
-                    }
+                // The 'article' object is available in the scope of createArticleElement
+                if (article && article.url) {
+                    // Open the original article URL in a new tab
+                    window.open(article.url, '_blank');
                 } else {
-                    throw new Error('Article ID is missing');
+                    console.error('Article object or URL not found for this button.');
+                    showNotification('error', 'Error', 'Could not find the article link.');
                 }
             } catch (error) {
-                console.error('Error opening article:', error);
-                showNotification('error', 'Error', 'Could not open the article. Please try again later.');
+                console.error('Error opening article link:', error);
+                showNotification('error', 'Error', 'An error occurred while trying to open the article link.');
             }
         });
     }
@@ -807,7 +803,7 @@ function getNewsArticles() {
             summary: "Recent analysis of satellite data shows significant changes in forest cover across the globe, with implications for climate change and biodiversity.",
             date: "2025-04-15",
             image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
-            url: "https://example.com/satellite-imagery-forest-cover",
+            url: "https://news.mongabay.com/2024/05/new-satellite-platform-monitors-deforestation-across-ecosystems-worldwide/",
             source: "GIS World",
             category: "Around the World",
             subcategory: "Environment"
@@ -817,7 +813,7 @@ function getNewsArticles() {
             summary: "New developments in LiDAR technology are revolutionizing urban planning by providing more accurate 3D models of cities.",
             date: "2025-04-10",
             image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1344&q=80",
-            url: "https://example.com/lidar-urban-planning",
+            url: "https://www.businesswire.com/news/home/20250318209338/en/LiDAR-Industry-Outlook-2033-Urban-Planning-is-Creating-Billion-Dollar-Opportunities-with-Smart-Cities-Fueling-LiDAR-Demand---ResearchAndMarkets.com",
             source: "Geospatial World",
             category: "Around the World",
             subcategory: "Technology"
@@ -827,7 +823,7 @@ function getNewsArticles() {
             summary: "The upcoming launch of new GPS satellites promises to improve location accuracy for everyday users and specialized applications.",
             date: "2025-04-05",
             image: "https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
-            url: "https://example.com/gps-accuracy-improvements",
+            url: "https://spacenews.com/space-force-reassigns-gps-satellite-launch-from-ula-to-spacex/",
             source: "Navigation News",
             category: "Around the World",
             subcategory: "Navigation"
@@ -837,7 +833,7 @@ function getNewsArticles() {
             summary: "Scientists are using advanced remote sensing techniques to track climate change impacts with unprecedented precision.",
             date: "2025-04-02",
             image: "https://images.unsplash.com/photo-1569503689347-a5dbdaca7c69?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-            url: "https://example.com/remote-sensing-climate-change",
+            url: "https://www.nps.gov/articles/000/ncpn_remote-sensing-and-climate-change-at-bryce-canyon-np.htm",
             source: "Earth Observation Magazine",
             category: "Around the World",
             subcategory: "Climate"
@@ -847,7 +843,7 @@ function getNewsArticles() {
             summary: "Humanitarian organizations are leveraging new open-source GIS tools to improve disaster response and aid distribution.",
             date: "2025-04-18",
             image: "https://images.unsplash.com/photo-1527219525722-f9767a7f2884?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80",
-            url: "https://example.com/open-source-gis-humanitarian",
+            url: "https://reliefweb.int/report/world/unleashing-power-gis-together-ifrc-network-gis-training-platform",
             source: "Humanitarian Tech Review",
             category: "Around the World",
             subcategory: "GIS"
@@ -857,7 +853,7 @@ function getNewsArticles() {
             summary: "Archaeologists are using drone mapping to discover and document ancient sites that were previously inaccessible or unknown.",
             date: "2025-04-12",
             image: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-            url: "https://example.com/drone-mapping-archaeology",
+            url: "https://advexure.com/blogs/news/archaeological-surveying-drones-uncovering-the-past",
             source: "Digital Archaeology Journal",
             category: "Around the World",
             subcategory: "Remote Sensing"
@@ -867,7 +863,7 @@ function getNewsArticles() {
             summary: "The Government of Nepal has launched a comprehensive geospatial data portal that provides public access to various spatial datasets.",
             date: "2025-04-17",
             image: "https://images.unsplash.com/photo-1544461772-722f2a1a21f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
-            url: "https://example.com/nepal-geospatial-portal",
+            url: "https://myrepublica.nagariknetwork.com/news/cbs-launches-ever-first-integrated-data-portal",
             source: "Kathmandu Post",
             category: "In Nepal",
             subcategory: "Government"
@@ -877,7 +873,7 @@ function getNewsArticles() {
             summary: "A collaborative project has completed a high-resolution mapping survey of the Kathmandu Valley, providing valuable data for urban planning and disaster management.",
             date: "2025-04-12",
             image: "https://images.unsplash.com/photo-1558799401-7c3f139af685?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
-            url: "https://example.com/kathmandu-mapping-project",
+            url: "https://flyinglabs.org/blog/high-resolution-aerial-mapping-of-nepals-urban-centers-aids-urban-planning-during-covid-19",
             source: "Nepal Times",
             category: "In Nepal",
             subcategory: "Urban Planning"
@@ -887,7 +883,7 @@ function getNewsArticles() {
             summary: "A team of researchers from Tribhuvan University has developed a low-cost drone system specifically designed for agricultural monitoring in Nepal's diverse terrain.",
             date: "2025-04-08",
             image: "https://images.unsplash.com/photo-1586094340401-10108413a8a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-            url: "https://example.com/nepal-agricultural-drone",
+            url: "https://www.researchgate.net/publication/380937964_DATAVEILLANCE_MANAGEMENT_USING_MICRO_DRONE_TECHNOLOGY_FOR_AGRICULTURE_PURPOSE_IN_NEPAL",
             source: "TechLekh",
             category: "In Nepal",
             subcategory: "Innovation"
@@ -897,7 +893,7 @@ function getNewsArticles() {
             summary: "The Department of Land Management has launched Nepal's first digital cadastre system in selected pilot districts, aiming to modernize land records management.",
             date: "2025-04-03",
             image: "https://images.unsplash.com/photo-1590496793929-36417d3117de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1396&q=80",
-            url: "https://example.com/nepal-digital-cadastre",
+            url: "https://www.gim-international.com/content/news/rmsi-develops-land-record-information-management-system-for-nepal",
             source: "Himalayan Times",
             category: "In Nepal",
             subcategory: "Land Management"
@@ -907,7 +903,7 @@ function getNewsArticles() {
             summary: "Nepal has implemented a new GIS-based system for disaster risk reduction, helping communities prepare for and respond to natural disasters.",
             date: "2025-04-14",
             image: "https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80",
-            url: "https://example.com/nepal-disaster-gis",
+            url: "https://www.undrr.org/news/successful-localization-disaster-risk-reduction-efforts-nepal-supported-through-well",
             source: "Nepal Disaster Review",
             category: "In Nepal",
             subcategory: "Disaster Management"
@@ -986,7 +982,7 @@ function getNewsArticles() {
 }
 
 // In a production environment, this would be replaced with actual API calls:
-/*
+
 function fetchNewsArticles() {
     // Example API endpoints for different categories
     const apiEndpoints = {
@@ -1043,4 +1039,4 @@ function fetchNewsArticles() {
             showNotification('error', 'Error Loading News', 'There was a problem loading the latest news. Please try again later.');
         });
 }
-*/
+
