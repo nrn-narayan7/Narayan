@@ -7,3 +7,7 @@ RewriteRule ^([^.]+)$ $1.html [L]
 # Redirect .html URLs to extensionless versions (SEO/canonical)
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 RewriteRule ^([^.]+)\.html$ /$1 [R=301,L]
+
+# Redirect /index or /index.html to root
+RewriteRule ^index$ / [R=301,L]
+RewriteRule ^index\.html$ / [R=301,L]
