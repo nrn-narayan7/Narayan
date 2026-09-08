@@ -1,0 +1,42 @@
+name: Update Gorkhapatra Loksewa archive
+
+# Runs every Wednesday (when Gorkhapatra publishes its Loksewa column)
+# plus a couple of days later as a safety net, and can also be run by
+# hand from the Actions tab at any time.
+on:
+  schedule:
+    - cron: '30 3 * * 3'   # 03:30 UTC Wed ≈ 09:15 Nepal Time (NPT, UTC+5:45)
+    - cron: '30 3 * * 5'   # Friday safety-net retry, in case Wed's run found nothing yet
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Gorkhapatra updater
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/update-gorkhapatra.mjs
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet -- data/gorkhapatra-mcqs.json; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "loksewa-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/gorkhapatra-mcqs.json
+          git commit -m "chore: weekly Gorkhapatra Loksewa archive update"
+          git push

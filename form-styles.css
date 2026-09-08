@@ -2,7 +2,7 @@
 
 /* Required Field Indicator */
 .required {
-    color: #e74c3c;
+    color: var(--teal);
     margin-left: 3px;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .form-group.focused label {
-    color: #1a3263;
+    color: var(--ink);
 }
 
 .form-group input,
@@ -33,14 +33,14 @@
     font-family: inherit;
     font-size: 1rem;
     transition: all 0.3s ease;
-    background-color: #f9f9f9;
+    background-color: var(--surface-alt);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: #1a3263;
+    border-color: var(--ink);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(26, 50, 99, 0.1);
+    box-shadow: 0 0 0 3px rgba(22, 40, 58, 0.1);
     background-color: #fff;
 }
 
@@ -52,12 +52,12 @@
 /* Error Styles */
 .form-group input.error,
 .form-group textarea.error {
-    border-color: #e74c3c;
-    background-color: rgba(231, 76, 60, 0.05);
+    border-color: var(--teal);
+    background-color: rgba(14, 124, 134, 0.05);
 }
 
 .form-group .error-message {
-    color: #e74c3c;
+    color: var(--teal);
     font-size: 0.85rem;
     margin-top: 5px;
     min-height: 17px;
@@ -96,20 +96,20 @@
 
 .success-message {
     background-color: rgba(46, 204, 113, 0.1);
-    color: #27ae60;
-    border-left: 3px solid #27ae60;
+    color: var(--success);
+    border-left: 3px solid var(--success);
 }
 
 .error-message {
-    background-color: rgba(231, 76, 60, 0.1);
-    color: #e74c3c;
-    border-left: 3px solid #e74c3c;
+    background-color: rgba(14, 124, 134, 0.1);
+    color: var(--teal);
+    border-left: 3px solid var(--teal);
 }
 
 .sending-message {
     background-color: rgba(52, 152, 219, 0.1);
-    color: #3498db;
-    border-left: 3px solid #3498db;
+    color: var(--teal);
+    border-left: 3px solid var(--teal);
 }
 
 .success-message i, 

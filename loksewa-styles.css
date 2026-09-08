@@ -1,0 +1,550 @@
+/* ============================================================
+   Loksewa Preparation Hub — styles
+   Builds on the design tokens defined in styles.css (:root).
+   Visual idea: a field surveyor's exam sheet — a ruled scale-bar
+   marks progress, a small flag marks the hint, ticks are the only
+   ornament borrowed from the site's cartographic language.
+   ============================================================ */
+
+.ls-hero {
+    background: linear-gradient(160deg, var(--ink-deep), var(--ink) 70%);
+    color: #fff;
+    padding: 70px 0 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ls-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.05) 0,
+        rgba(255, 255, 255, 0.05) 1px,
+        transparent 1px,
+        transparent 48px
+    );
+    pointer-events: none;
+}
+
+.ls-hero__inner {
+    position: relative;
+    max-width: 760px;
+}
+
+.ls-hero h1 {
+    font-size: 2.4rem;
+    margin-bottom: 14px;
+}
+
+.ls-hero p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 620px;
+    margin-bottom: 22px;
+}
+
+.ls-hero__stats {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.ls-hero__stat {
+    border-left: 2px solid var(--ochre);
+    padding-left: 12px;
+}
+
+.ls-hero__stat strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    line-height: 1.1;
+}
+
+.ls-hero__stat span {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.ls-section {
+    padding: 50px 0 90px;
+    background-color: var(--paper);
+}
+
+/* ---------- Tabs ---------- */
+
+.ls-tabs {
+    display: flex;
+    gap: 6px;
+    border-bottom: 1px solid var(--border);
+    margin: 36px 0 30px;
+    flex-wrap: wrap;
+}
+
+.ls-tab {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    background: none;
+    border: none;
+    padding: 12px 20px;
+    color: var(--text-muted);
+    cursor: pointer;
+    position: relative;
+    border-radius: 6px 6px 0 0;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.ls-tab i {
+    margin-right: 7px;
+}
+
+.ls-tab:hover {
+    color: var(--ink);
+    background-color: var(--surface-alt);
+}
+
+.ls-tab--active {
+    color: var(--ink);
+}
+
+.ls-tab--active::after {
+    content: '';
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: -1px;
+    height: 3px;
+    background-color: var(--teal);
+    border-radius: 2px 2px 0 0;
+}
+
+.ls-panel {
+    display: none;
+}
+
+.ls-panel--active {
+    display: block;
+    animation: lsFadeIn 0.35s ease;
+}
+
+@keyframes lsFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.ls-panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.ls-panel-head h2 {
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+
+.ls-panel-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    max-width: 560px;
+}
+
+.ls-meta {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.ls-week-select {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background-color: var(--surface);
+    color: var(--text);
+    min-width: 240px;
+}
+
+.ls-shuffle-btn {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--ink);
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.ls-shuffle-btn:hover {
+    border-color: var(--teal);
+    color: var(--teal-deep);
+}
+
+/* ---------- Quiz card ---------- */
+
+.ls-quiz-root {
+    max-width: 700px;
+}
+
+.ls-quiz-head {
+    margin-bottom: 16px;
+}
+
+/* Scale-bar progress: a ruled tick strip, like a surveyor's staff */
+.ls-progress {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.ls-tick {
+    flex: 1;
+    height: 6px;
+    background-color: var(--border);
+    border-radius: 1px;
+}
+
+.ls-tick--done {
+    background-color: var(--teal);
+}
+
+.ls-tick--current {
+    background-color: var(--ochre);
+}
+
+.ls-count {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.ls-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+}
+
+/* Corner tick marks — a registration-mark motif instead of a drop shadow */
+.ls-card::before,
+.ls-card::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-color: var(--ochre);
+    opacity: 0.55;
+}
+
+.ls-card::before {
+    top: -1px;
+    left: -1px;
+    border-top: 2px solid var(--ochre);
+    border-left: 2px solid var(--ochre);
+}
+
+.ls-card::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 2px solid var(--ochre);
+    border-right: 2px solid var(--ochre);
+}
+
+.ls-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--teal-deep);
+    background-color: rgba(14, 124, 134, 0.1);
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+}
+
+.ls-question {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 22px;
+}
+
+.ls-options {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.ls-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.ls-option:hover {
+    border-color: var(--teal);
+    background-color: rgba(14, 124, 134, 0.05);
+}
+
+.ls-option__marker {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.ls-option--selected {
+    border-color: var(--teal);
+    background-color: rgba(14, 124, 134, 0.08);
+}
+
+.ls-option--selected .ls-option__marker {
+    border-color: var(--teal);
+    color: var(--teal-deep);
+    background-color: #fff;
+}
+
+.ls-option--locked {
+    cursor: default;
+    pointer-events: none;
+}
+
+.ls-option--correct {
+    border-color: var(--success);
+    background-color: rgba(63, 125, 79, 0.08);
+}
+
+.ls-option--correct .ls-option__marker {
+    border-color: var(--success);
+    background-color: var(--success);
+    color: #fff;
+}
+
+.ls-option--incorrect {
+    border-color: var(--danger);
+    background-color: rgba(178, 58, 46, 0.06);
+}
+
+.ls-option--incorrect .ls-option__marker {
+    border-color: var(--danger);
+    background-color: var(--danger);
+    color: #fff;
+}
+
+.ls-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.ls-actions--center {
+    justify-content: center;
+}
+
+.ls-btn {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 11px 20px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ls-btn--primary {
+    background-color: var(--teal);
+    color: #fff;
+}
+
+.ls-btn--primary:hover:not(:disabled) {
+    background-color: var(--teal-deep);
+}
+
+.ls-btn--primary:disabled {
+    background-color: var(--border);
+    color: var(--text-muted);
+    cursor: not-allowed;
+}
+
+.ls-btn--ghost {
+    background-color: transparent;
+    border-color: var(--border);
+    color: var(--ink);
+}
+
+.ls-btn--ghost:hover:not(:disabled) {
+    border-color: var(--ochre);
+    color: var(--ochre);
+}
+
+.ls-btn--ghost:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* Hint — a small flag, in keeping with a surveyor marking a point */
+.ls-hint {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background-color: rgba(192, 138, 46, 0.1);
+    border-left: 3px solid var(--ochre);
+    border-radius: 4px;
+    font-size: 0.92rem;
+    color: var(--text);
+}
+
+.ls-hint i {
+    color: var(--ochre);
+}
+
+.ls-feedback {
+    margin-top: 18px;
+    padding: 16px 18px;
+    border-radius: 8px;
+    animation: lsFadeIn 0.3s ease;
+}
+
+.ls-feedback--correct {
+    background-color: rgba(63, 125, 79, 0.09);
+    border: 1px solid rgba(63, 125, 79, 0.3);
+}
+
+.ls-feedback--incorrect {
+    background-color: rgba(178, 58, 46, 0.07);
+    border: 1px solid rgba(178, 58, 46, 0.25);
+}
+
+.ls-feedback__head {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.ls-feedback--correct .ls-feedback__head {
+    color: var(--success);
+}
+
+.ls-feedback--incorrect .ls-feedback__head {
+    color: var(--danger);
+}
+
+.ls-explanation {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.ls-source {
+    margin-top: 16px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    border-top: 1px dashed var(--border);
+    padding-top: 12px;
+}
+
+.ls-source a {
+    color: var(--teal-deep);
+    font-weight: 600;
+}
+
+/* ---------- Summary ---------- */
+
+.ls-summary {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 44px 30px;
+    text-align: center;
+}
+
+.ls-summary__score {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--ink);
+    font-weight: 700;
+}
+
+.ls-summary__remark {
+    color: var(--text-muted);
+    margin: 10px 0 24px;
+}
+
+.ls-empty {
+    padding: 40px;
+    text-align: center;
+    color: var(--text-muted);
+    background-color: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+}
+
+/* ---------- Info strip: how hints/explanations work ---------- */
+
+.ls-howto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+    margin: 34px 0 10px;
+}
+
+.ls-howto__item {
+    background-color: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+}
+
+.ls-howto__item i {
+    color: var(--teal);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.ls-howto__item h4 {
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+
+.ls-howto__item p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+    .ls-hero { padding: 50px 0 40px; }
+    .ls-hero h1 { font-size: 1.8rem; }
+    .ls-card { padding: 22px; }
+    .ls-question { font-size: 1.05rem; }
+    .ls-panel-head { flex-direction: column; align-items: flex-start; }
+}
