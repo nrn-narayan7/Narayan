@@ -165,66 +165,61 @@ function validateEmail(field, errorId) {
     }
 }
 
-// Send email function
+// Send email function — delivers to er.narayantripathi@gmail.com via Formspree
+// (no backend needed; Formspree just forwards the submission to your inbox)
 function sendEmail(formData) {
     const formStatus = document.getElementById('form-status');
-    
-    // In a real implementation, this would use EmailJS, a server-side API, or similar service
-    // For demonstration, we'll simulate the API call
-    
-    // This is where you would integrate with a service like EmailJS:
-    /*
-    emailjs.send('service_id', 'template_id', {
-        to_email: 'er.narayantripathi@gmail.com',
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message
+
+    // ⚠️ SETUP REQUIRED — replace this with your own Formspree endpoint:
+    // 1. Go to https://formspree.io and sign up free with er.narayantripathi@gmail.com
+    // 2. Create a new form — Formspree gives you a URL like https://formspree.io/f/abcdwxyz
+    // 3. Paste that URL below, replacing the placeholder
+    // 4. Your FIRST real submission will trigger a one-time "confirm your form" email
+    //    from Formspree — click confirm, and every submission after that lands in your inbox.
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xqpakvve';
+
+    fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            _replyto: formData.email,
+            subject: formData.subject,
+            _subject: 'Website contact: ' + formData.subject,
+            message: formData.message
+        })
     })
-    .then(function(response) {
-        // Success
-        formStatus.innerHTML = '<div class="success-message"><i class="fas fa-check-circle"></i> Your message has been sent successfully!</div>';
-        document.getElementById('contactForm').reset();
-        
-        // Clear success message after 5 seconds
-        setTimeout(() => {
-            formStatus.innerHTML = '';
-        }, 5000);
-    })
-    .catch(function(error) {
-        // Error
-        formStatus.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i> There was an error sending your message. Please try again later.</div>';
-        
-        // Clear error message after 5 seconds
-        setTimeout(() => {
-            formStatus.innerHTML = '';
-        }, 5000);
-    });
-    */
-    
-    // Simulate API call with setTimeout
-    setTimeout(() => {
-        // Simulate 90% success rate
-        const isSuccess = Math.random() < 0.9;
-        
-        if (isSuccess) {
-            // Success - without showing email address
+    .then(response => {
+        if (response.ok) {
             formStatus.innerHTML = '<div class="success-message"><i class="fas fa-check-circle"></i> Message sent successfully!</div>';
             document.getElementById('contactForm').reset();
-            
+
             // Reset form input states
             const formInputs = document.querySelectorAll('#contactForm input, #contactForm textarea');
             formInputs.forEach(input => {
                 input.parentElement.classList.remove('focused');
             });
         } else {
-            // Error
-            formStatus.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i> There was an error sending your message. Please try again later.</div>';
+            return response.json().then(data => {
+                const reason = (data && data.errors && data.errors.length)
+                    ? data.errors.map(e => e.message).join(', ')
+                    : 'Submission failed';
+                throw new Error(reason);
+            });
         }
-        
+    })
+    .catch(error => {
+        console.error('Contact form error:', error);
+        formStatus.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i> There was an error sending your message. Please try again later.</div>';
+    })
+    .finally(() => {
         // Clear status message after 5 seconds
         setTimeout(() => {
             formStatus.innerHTML = '';
         }, 5000);
-    }, 2000);
+    });
 }

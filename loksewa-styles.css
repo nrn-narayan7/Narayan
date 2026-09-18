@@ -36,11 +36,12 @@
 .ls-hero h1 {
     font-size: 2.4rem;
     margin-bottom: 14px;
+    color: #fff;
 }
 
 .ls-hero p {
     font-size: 1.05rem;
-    color: rgba(255, 255, 255, 0.82);
+    color: rgba(255, 255, 255, 0.8);
     max-width: 620px;
     margin-bottom: 22px;
 }
@@ -62,16 +63,17 @@
     font-family: var(--font-display);
     font-size: 1.5rem;
     line-height: 1.1;
+    color: var(--teal);
 }
 
 .ls-hero__stat span {
     font-size: 0.82rem;
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.62);
 }
 
 .ls-section {
     padding: 50px 0 90px;
-    background-color: var(--paper);
+    background-color: var(--void);
 }
 
 /* ---------- Tabs ---------- */
@@ -103,12 +105,12 @@
 }
 
 .ls-tab:hover {
-    color: var(--ink);
+    color: var(--heading);
     background-color: var(--surface-alt);
 }
 
 .ls-tab--active {
-    color: var(--ink);
+    color: var(--heading);
 }
 
 .ls-tab--active::after {
@@ -147,7 +149,7 @@
 
 .ls-panel-head h2 {
     font-size: 1.5rem;
-    color: var(--ink);
+    color: var(--heading);
     margin-bottom: 4px;
 }
 
@@ -166,10 +168,10 @@
     font-family: var(--font-body);
     font-size: 0.9rem;
     padding: 8px 12px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-strong);
     border-radius: 6px;
-    background-color: var(--surface);
-    color: var(--text);
+    background-color: var(--surface-hi);
+    color: var(--heading);
     min-width: 240px;
 }
 
@@ -178,8 +180,8 @@
     font-size: 0.85rem;
     font-weight: 600;
     background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--ink);
+    border: 1px solid var(--border-strong);
+    color: var(--heading);
     padding: 8px 14px;
     border-radius: 6px;
     cursor: pointer;
@@ -188,7 +190,7 @@
 
 .ls-shuffle-btn:hover {
     border-color: var(--teal);
-    color: var(--teal-deep);
+    color: var(--teal);
 }
 
 /* ---------- Quiz card ---------- */
@@ -211,7 +213,7 @@
 .ls-tick {
     flex: 1;
     height: 6px;
-    background-color: var(--border);
+    background-color: var(--border-strong);
     border-radius: 1px;
 }
 
@@ -235,6 +237,7 @@
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 30px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
     position: relative;
 }
 
@@ -245,8 +248,7 @@
     position: absolute;
     width: 14px;
     height: 14px;
-    border-color: var(--ochre);
-    opacity: 0.55;
+    opacity: 0.7;
 }
 
 .ls-card::before {
@@ -267,8 +269,8 @@
     display: inline-block;
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--teal-deep);
-    background-color: rgba(14, 124, 134, 0.1);
+    color: var(--teal);
+    background-color: rgba(20, 184, 166, 0.12);
     padding: 3px 10px;
     border-radius: 20px;
     margin-bottom: 14px;
@@ -278,7 +280,7 @@
     font-family: var(--font-display);
     font-size: 1.2rem;
     line-height: 1.5;
-    color: var(--ink);
+    color: var(--heading);
     margin-bottom: 22px;
 }
 
@@ -295,7 +297,7 @@
     align-items: flex-start;
     gap: 12px;
     padding: 12px 16px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-strong);
     border-radius: 8px;
     cursor: pointer;
     transition: border-color 0.15s ease, background-color 0.15s ease;
@@ -303,7 +305,7 @@
 
 .ls-option:hover {
     border-color: var(--teal);
-    background-color: rgba(14, 124, 134, 0.05);
+    background-color: rgba(20, 184, 166, 0.07);
 }
 
 .ls-option__marker {
@@ -311,7 +313,7 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-strong);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -322,13 +324,13 @@
 
 .ls-option--selected {
     border-color: var(--teal);
-    background-color: rgba(14, 124, 134, 0.08);
+    background-color: rgba(20, 184, 166, 0.1);
 }
 
 .ls-option--selected .ls-option__marker {
     border-color: var(--teal);
-    color: var(--teal-deep);
-    background-color: #fff;
+    color: var(--teal);
+    background-color: var(--surface);
 }
 
 .ls-option--locked {
@@ -338,24 +340,24 @@
 
 .ls-option--correct {
     border-color: var(--success);
-    background-color: rgba(63, 125, 79, 0.08);
+    background-color: rgba(74, 222, 128, 0.1);
 }
 
 .ls-option--correct .ls-option__marker {
     border-color: var(--success);
     background-color: var(--success);
-    color: #fff;
+    color: var(--void);
 }
 
 .ls-option--incorrect {
     border-color: var(--danger);
-    background-color: rgba(178, 58, 46, 0.06);
+    background-color: rgba(248, 113, 113, 0.08);
 }
 
 .ls-option--incorrect .ls-option__marker {
     border-color: var(--danger);
     background-color: var(--danger);
-    color: #fff;
+    color: var(--void);
 }
 
 .ls-actions {
@@ -382,23 +384,24 @@
 
 .ls-btn--primary {
     background-color: var(--teal);
-    color: #fff;
+    color: var(--void);
 }
 
 .ls-btn--primary:hover:not(:disabled) {
     background-color: var(--teal-deep);
+    color: #fff;
 }
 
 .ls-btn--primary:disabled {
-    background-color: var(--border);
+    background-color: var(--surface-hi);
     color: var(--text-muted);
     cursor: not-allowed;
 }
 
 .ls-btn--ghost {
     background-color: transparent;
-    border-color: var(--border);
-    color: var(--ink);
+    border-color: var(--border-strong);
+    color: var(--heading);
 }
 
 .ls-btn--ghost:hover:not(:disabled) {
@@ -415,7 +418,7 @@
 .ls-hint {
     margin-top: 16px;
     padding: 12px 16px;
-    background-color: rgba(192, 138, 46, 0.1);
+    background-color: rgba(217, 164, 65, 0.12);
     border-left: 3px solid var(--ochre);
     border-radius: 4px;
     font-size: 0.92rem;
@@ -434,18 +437,19 @@
 }
 
 .ls-feedback--correct {
-    background-color: rgba(63, 125, 79, 0.09);
-    border: 1px solid rgba(63, 125, 79, 0.3);
+    background-color: rgba(74, 222, 128, 0.1);
+    border: 1px solid rgba(74, 222, 128, 0.35);
 }
 
 .ls-feedback--incorrect {
-    background-color: rgba(178, 58, 46, 0.07);
-    border: 1px solid rgba(178, 58, 46, 0.25);
+    background-color: rgba(248, 113, 113, 0.08);
+    border: 1px solid rgba(248, 113, 113, 0.3);
 }
 
 .ls-feedback__head {
     font-weight: 700;
     margin-bottom: 8px;
+    color: var(--heading);
 }
 
 .ls-feedback--correct .ls-feedback__head {
@@ -471,7 +475,7 @@
 }
 
 .ls-source a {
-    color: var(--teal-deep);
+    color: var(--teal);
     font-weight: 600;
 }
 
@@ -483,12 +487,13 @@
     border-radius: 10px;
     padding: 44px 30px;
     text-align: center;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
 }
 
 .ls-summary__score {
     font-family: var(--font-display);
     font-size: 3rem;
-    color: var(--ink);
+    color: var(--heading);
     font-weight: 700;
 }
 
@@ -502,7 +507,7 @@
     text-align: center;
     color: var(--text-muted);
     background-color: var(--surface);
-    border: 1px dashed var(--border);
+    border: 1px dashed var(--border-strong);
     border-radius: 10px;
 }
 
@@ -531,7 +536,7 @@
 
 .ls-howto__item h4 {
     font-size: 0.95rem;
-    color: var(--ink);
+    color: var(--heading);
     margin-bottom: 4px;
 }
 
