@@ -1,0 +1,43 @@
+/* Floating scroll buttons — restyled for the dark theme.
+   (Page-header background animation now lives in styles.css —
+   removed the duplicate/conflicting copy that used to live here.) */
+
+.scroll-buttons {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 99;
+}
+
+.scroll-top, .scroll-bottom {
+    width: 42px;
+    height: 42px;
+    background-color: var(--ink);
+    border: 1px solid var(--border-strong);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.scroll-top:hover, .scroll-bottom:hover {
+    background-color: var(--teal);
+    border-color: var(--teal);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(20, 184, 166, 0.4);
+}
+
+.scroll-top i, .scroll-bottom i {
+    font-size: 1.15rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-top, .scroll-bottom { transition: none; }
+}

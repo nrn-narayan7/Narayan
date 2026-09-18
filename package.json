@@ -1,0 +1,13 @@
+{
+  "name": "narayan-tripathi-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "narayantripathi.com.np — static site with an automated Loksewa Gorkhapatra MCQ updater.",
+  "type": "module",
+  "scripts": {
+    "update-gorkhapatra": "node scripts/update-gorkhapatra.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
