@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loksewa Preparation - Narayan Tripathi</title>
+    <meta name="description" content="Free daily-refreshing Loksewa exam practice: General Knowledge, IQ & reasoning, and a 20-week Gorkhapatra current-affairs archive with hints and explanations.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="loksewa-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="animations.css">
+    <script src="js/image-fallback.js"></script>
+    <!--  Favicon -->
+    <link href="img/icon.png" rel="icon">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index">
+                    <img src="images/narayan_profile.png" alt="Narayan Tripathi">
+                </a>
+            </div>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index">Home</a></li>
+                    <li><a href="about">About</a></li>
+                    <!-- <li><a href="education">Education</a></li> -->
+                    <li><a href="loksewa" class="active">Loksewa Prep</a></li>
+                    <li><a href="news">News</a></li>
+                    <li><a href="contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="get-started">
+                <a href="contact" class="button">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="ls-hero">
+        <div class="container ls-hero__inner">
+            <h1 class="animate__animated animate__fadeInDown">Loksewa Preparation Hub</h1>
+            <p class="animate__animated animate__fadeIn">Free, self-refreshing practice sets built for Nepal's Loksewa exams. A new set from each question bank is drawn automatically every day, and the Gorkhapatra archive is sourced directly from the newspaper's own Wednesday Loksewa column.</p>
+            <div class="ls-hero__stats animate__animated animate__fadeInUp">
+                <div class="ls-hero__stat"><strong id="stat-gk">—</strong><span>GK questions</span></div>
+                <div class="ls-hero__stat"><strong id="stat-iq">—</strong><span>IQ questions</span></div>
+                <div class="ls-hero__stat"><strong id="stat-weeks">—</strong><span>Gorkhapatra weeks</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ls-section">
+        <div class="container" id="loksewa-app">
+
+            <div class="ls-howto">
+                <div class="ls-howto__item">
+                    <i class="fas fa-flag"></i>
+                    <h4>संकेत (Hint)</h4>
+                    <p>अलमलमा पर्नुभयो भने 'संकेत हेर्नुहोस्' थिच्नुहोस् — क्लिक नगरेसम्म देखिँदैन।</p>
+                </div>
+                <div class="ls-howto__item">
+                    <i class="fas fa-check-double"></i>
+                    <h4>व्याख्या (Explanation)</h4>
+                    <p>उत्तर पेश गरेपछि मात्र सही उत्तर र पूर्ण व्याख्या देखिन्छ।</p>
+                </div>
+                <div class="ls-howto__item">
+                    <i class="fas fa-sync-alt"></i>
+                    <h4>दैनिक अद्यावधिक</h4>
+                    <p>GK र IQ का प्रश्नहरू हरेक दिन स्वतः फेरिन्छन् — सबैले उही दिन उही सेट देख्छन्।</p>
+                </div>
+                <div class="ls-howto__item">
+                    <i class="fas fa-newspaper"></i>
+                    <h4>गोरखापत्र स्रोत</h4>
+                    <p>हरेक बुधबार प्रकाशित हुने गोरखापत्रको लोकसेवा स्तम्भबाट पछिल्लो २० हप्ताको अभिलेख।</p>
+                </div>
+            </div>
+
+            <div class="ls-tabs" role="tablist">
+                <button type="button" class="ls-tab ls-tab--active" data-section="gk" role="tab"><i class="fas fa-book"></i>सामान्य ज्ञान (GK)</button>
+                <button type="button" class="ls-tab" data-section="iq" role="tab"><i class="fas fa-brain"></i>बौद्धिक परीक्षण (IQ)</button>
+                <button type="button" class="ls-tab" data-section="gorkhapatra" role="tab"><i class="fas fa-newspaper"></i>गोरखापत्र साप्ताहिक</button>
+            </div>
+
+            <!-- GK Panel -->
+            <div class="ls-panel ls-panel--active" id="panel-gk">
+                <div class="ls-panel-head">
+                    <div>
+                        <h2>सामान्य ज्ञान</h2>
+                        <p class="ls-panel-desc">भूगोल, इतिहास, संविधान र सामान्य ज्ञानका स्थिर तथ्यमा आधारित दैनिक अभ्यास सेट।</p>
+                    </div>
+                    <button type="button" class="ls-shuffle-btn" data-shuffle="gk"><i class="fas fa-random"></i> नयाँ सेट</button>
+                </div>
+                <p class="ls-meta" id="gk-meta"></p>
+                <div class="ls-quiz-root" id="gk-quiz-root"><div class="ls-empty">लोड हुँदैछ…</div></div>
+            </div>
+
+            <!-- IQ Panel -->
+            <div class="ls-panel" id="panel-iq">
+                <div class="ls-panel-head">
+                    <div>
+                        <h2>बौद्धिक परीक्षण (IQ)</h2>
+                        <p class="ls-panel-desc">श्रृंखला, सादृश्य, कोडिङ-डिकोडिङ, रक्त सम्बन्ध, दिशाज्ञान र आधारभूत गणितीय तर्क।</p>
+                    </div>
+                    <button type="button" class="ls-shuffle-btn" data-shuffle="iq"><i class="fas fa-random"></i> नयाँ सेट</button>
+                </div>
+                <p class="ls-meta" id="iq-meta"></p>
+                <div class="ls-quiz-root" id="iq-quiz-root"><div class="ls-empty">लोड हुँदैछ…</div></div>
+            </div>
+
+            <!-- Gorkhapatra Panel -->
+            <div class="ls-panel" id="panel-gorkhapatra">
+                <div class="ls-panel-head">
+                    <div>
+                        <h2>गोरखापत्र साप्ताहिक वस्तुगत प्रश्नोत्तर</h2>
+                        <p class="ls-panel-desc">गोरखापत्रमा हरेक बुधबार प्रकाशित हुने 'वस्तुगत प्रश्नोत्तर' स्तम्भमा आधारित प्रश्नहरू, हप्तागत रूपमा।</p>
+                    </div>
+                    <select class="ls-week-select" id="gorkhapatra-week-select" aria-label="हप्ता छान्नुहोस्"></select>
+                </div>
+                <p class="ls-meta" id="gorkhapatra-meta"></p>
+                <div class="ls-quiz-root" id="gorkhapatra-quiz-root"><div class="ls-empty">लोड हुँदैछ…</div></div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content animate__animated animate__fadeIn">
+                <h2>यो टुल उपयोगी लाग्यो?</h2>
+                <p>कुनै सुझाव, गल्ती फेला पार्नुभयो, वा थप विषय समावेश गर्न चाहनुहुन्छ भने सम्पर्क गर्न नहिचकिचाउनुहोस्।</p>
+                <a href="contact" class="button button-large">सम्पर्क गर्नुहोस्</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 Narayan Prasad Tripathi. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/loksewa-engine.js"></script>
+    <script src="js/loksewa.js"></script>
+    <script>
+        // Populate the hero stat counters once data loads.
+        (function () {
+            function setStat(id, value) {
+                const el = document.getElementById(id);
+                if (el) el.textContent = value;
+            }
+            Promise.all([
+                fetch('data/gk-questions.json').then(r => r.json()).catch(() => null),
+                fetch('data/iq-questions.json').then(r => r.json()).catch(() => null),
+                fetch('data/gorkhapatra-mcqs.json').then(r => r.json()).catch(() => null)
+            ]).then(([gk, iq, gp]) => {
+                if (gk) setStat('stat-gk', gk.questions.length + '+');
+                if (iq) setStat('stat-iq', iq.questions.length + '+');
+                if (gp) setStat('stat-weeks', gp.weeks.length);
+            });
+        })();
+    </script>
+</body>
+</html>
