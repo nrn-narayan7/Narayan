@@ -121,29 +121,50 @@ function parseObjectiveQA(bodyText) {
     const qMark = body.indexOf('?');
     if (qMark === -1) continue;
     const question = body.slice(0, qMark + 1).trim();
-    const rest = body.slice(qMark + 1).trim();
+    let rest = body.slice(qMark + 1).trim();
     if (!question || !rest) continue;
-    // Gorkhapatra's own format is usually "उत्तर – सहायक तथ्यहरू ।":
-    // prefer splitting on the en/em dash first (short answer vs.
-    // supporting facts); fall back to the first sentence-ending danda.
-    const dashIdx = rest.search(/\s[–—-]\s/);
-    const dandaIdx = rest.search(/[।.]/);
-    let answer, extra;
-    if (dashIdx !== -1 && (dandaIdx === -1 || dashIdx < dandaIdx)) {
-      answer = rest.slice(0, dashIdx).trim();
-      extra = rest.slice(dashIdx + 1).replace(/^[–—-]\s*/, '').trim();
-    } else if (dandaIdx !== -1) {
-      answer = rest.slice(0, dandaIdx).replace(/^[-–—:]\s*/, '').trim();
-      extra = rest.slice(dandaIdx + 1).trim();
-    } else {
-      answer = rest.replace(/^[-–—:]\s*/, '').trim();
-      extra = '';
-    }
+
+    const { short: answer, rest: extra } = splitAnswerFromExtra(rest);
     if (question.length > 10 && answer.length > 0 && answer.length < 200) {
       qa.push({ question, answer, extra });
     }
   }
   return qa;
+}
+
+/**
+ * Cuts the short, concrete answer away from any supporting facts.
+ * Gorkhapatra's own answer line is often "– तीन महिना ... : विसं २०८३
+ * भदौ ११ गते ... : विसं २०८३ भदौ १० गते" — several related facts
+ * chained together with a leading dash and internal colons. The
+ * question only wants the *first* fact; the rest belongs in the
+ * explanation, not the answer itself.
+ */
+function splitAnswerFromExtra(text) {
+  // Strip a leading separator in whatever dash/colon/punctuation form it
+  // shows up in (Gorkhapatra's own formatting is inconsistent here).
+  let t = (text || '').replace(/^[\-\u2010-\u2015:।.\s]+/, '').trim();
+  if (!t) return { short: '', rest: '' };
+
+  // The short answer ends at the first internal boundary: a spaced dash,
+  // a spaced colon, or a sentence-ending danda. Nepali's own
+  // sentence-ending mark is "।" — a bare "." is almost always an
+  // abbreviation dot (रु., डा., प्रा.) or a decimal point, not a real
+  // boundary, so it's deliberately excluded. Skip any boundary that
+  // falls inside unbalanced parentheses, e.g. "ठाउँ (उद्घाटन : मिति)"
+  // shouldn't be cut at the colon inside the parens.
+  const boundaryRe = /\s[\-\u2010-\u2015]\s|\s:\s|।/g;
+  let match;
+  while ((match = boundaryRe.exec(t))) {
+    const idx = match.index;
+    if (idx <= 0) continue;
+    const before = t.slice(0, idx);
+    const opens = (before.match(/\(/g) || []).length;
+    const closes = (before.match(/\)/g) || []).length;
+    if (opens > closes) continue;
+    return { short: t.slice(0, idx).trim(), rest: t.slice(idx + match[0].length).trim() };
+  }
+  return { short: t, rest: '' };
 }
 
 async function fetchArticle(url) {
